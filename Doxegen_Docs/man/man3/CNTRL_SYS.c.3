@@ -1,0 +1,102 @@
+.TH "C:/Users/a7med/Desktop/Embbeded Project/Project code/Door_locker_project/Door_locker_project_CNTRL/Door_locker_CNTRL_ECU/CNTRL_SYS.c" 3 "Sat Nov 22 2014" "Door_locker_system" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/a7med/Desktop/Embbeded Project/Project code/Door_locker_project/Door_locker_project_CNTRL/Door_locker_CNTRL_ECU/CNTRL_SYS.c \- 
+Module for CNTRL ECU used to initialize cntrol system, setup password and execute the received menu option\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'CNTRL_SYS\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBSYS_CNTRL_Init\fP (void)"
+.br
+.ti -1c
+.RI "void \fBSYS_send_password_status\fP (void)"
+.br
+.ti -1c
+.RI "void \fBSYS_CNTRL_setup_password\fP (void)"
+.br
+.ti -1c
+.RI "void \fBSYS_CNTRL_open\fP (uint8 servo_angle)"
+.br
+.ti -1c
+.RI "void \fBSYS_CNTRL_close\fP (void)"
+.br
+.ti -1c
+.RI "void \fBSYS_CNTRL_change_password\fP (void)"
+.br
+.ti -1c
+.RI "void \fBSYS_CNTRL_menu_option\fP (void)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBpass\fP \fBpassword\fP = {\&.frist_time_flag = 0, \&.passwrd={0,0,0,0} ,\&.password_correctly_enterd_flag = 0, \&.password_saved_flag = 0 }"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Module for CNTRL ECU used to initialize cntrol system, setup password and execute the received menu option\&. 
+
+
+.PP
+\fBDate:\fP
+.RS 4
+11/19/2014 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+a7med 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+
+.PP
+Definition in file \fBCNTRL_SYS\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void SYS_CNTRL_change_password (void)"
+Description: Function is used to change the password in EEPROM 
+.PP
+Definition at line 156 of file CNTRL_SYS\&.c\&.
+.SS "void SYS_CNTRL_close (void)"
+Description: Function is used to close the door of the system by moving the motors in the right direction 
+.PP
+Definition at line 146 of file CNTRL_SYS\&.c\&.
+.SS "void SYS_CNTRL_Init (void)"
+Description: Function is used to Initialize Control system 
+.PP
+Definition at line 18 of file CNTRL_SYS\&.c\&.
+.SS "void SYS_CNTRL_menu_option (void)"
+Description: Function is used to receive menu option and apply it 
+.PP
+Definition at line 183 of file CNTRL_SYS\&.c\&.
+.SS "void SYS_CNTRL_open (uint8servo_angle)"
+Description: Function is used to open the door of the system by moving the motors in the right direction 
+.PP
+Definition at line 134 of file CNTRL_SYS\&.c\&.
+.SS "void SYS_CNTRL_setup_password (void)"
+Description: Function is used to setup the password 
+.PP
+Definition at line 61 of file CNTRL_SYS\&.c\&.
+.SS "void SYS_send_password_status (void)"
+Description: Function is used to send the status of the password in EEPROM 
+.PP
+Definition at line 31 of file CNTRL_SYS\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Door_locker_system from the source code\&.

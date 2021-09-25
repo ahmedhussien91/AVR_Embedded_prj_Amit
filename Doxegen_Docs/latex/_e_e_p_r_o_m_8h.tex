@@ -1,0 +1,88 @@
+\hypertarget{_e_e_p_r_o_m_8h}{\section{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+C\+N\+T\+R\+L/\+Door\+\_\+locker\+\_\+\+C\+N\+T\+R\+L\+\_\+\+E\+C\+U/\+E\+E\+P\+R\+O\+M.h File Reference}
+\label{_e_e_p_r_o_m_8h}\index{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+C\+N\+T\+R\+L/\+Door\+\_\+locker\+\_\+\+C\+N\+T\+R\+L\+\_\+\+E\+C\+U/\+E\+E\+P\+R\+O\+M.\+h@{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+C\+N\+T\+R\+L/\+Door\+\_\+locker\+\_\+\+C\+N\+T\+R\+L\+\_\+\+E\+C\+U/\+E\+E\+P\+R\+O\+M.\+h}}
+}
+
+
+E\+E\+P\+R\+O\+M module to write and read from E\+E\+P\+R\+O\+M using I2\+C.  
+
+
+{\ttfamily \#include \char`\"{}I2\+C.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_e_e_p_r_o_m_8h_aa90cac659d18e8ef6294c7ae337f6b58}{\#define {\bfseries S\+U\+C\+C\+E\+S\+S}~1}\label{_e_e_p_r_o_m_8h_aa90cac659d18e8ef6294c7ae337f6b58}
+
+\item 
+\hypertarget{_e_e_p_r_o_m_8h_a8fe83ac76edc595f6b98cd4a4127aed5}{\#define {\bfseries E\+R\+R\+O\+R}~0}\label{_e_e_p_r_o_m_8h_a8fe83ac76edc595f6b98cd4a4127aed5}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_e_e_p_r_o_m_8h_a9b96be87feb3d06051077ffd4c53f38d}{E\+E\+P\+R\+O\+M\+\_\+\+Init} (void)
+\item 
+uint8 \hyperlink{_e_e_p_r_o_m_8h_a8e1a72724a284cc056b09b4373831500}{E\+E\+P\+R\+O\+M\+\_\+write\+\_\+byte} (uint16 addr, uint8 data)
+\item 
+uint8 \hyperlink{_e_e_p_r_o_m_8h_a58a58e77b902b3a718daaf97ef52b878}{E\+E\+P\+R\+O\+M\+\_\+read\+\_\+byte} (uint16 addr, uint8 $\ast$data)
+\item 
+uint8 \hyperlink{_e_e_p_r_o_m_8h_aae1db9e6085bf18a8615962be357c08c}{E\+E\+P\+R\+O\+M\+\_\+write\+\_\+page} (uint8 Page, uint8 $\ast$data)
+\item 
+uint8 \hyperlink{_e_e_p_r_o_m_8h_a7a1e0d407eadbcbbbc4e1cc544a032ac}{E\+E\+P\+R\+O\+M\+\_\+read\+\_\+\+Page} (uint8 Page, uint8 $\ast$data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+E\+E\+P\+R\+O\+M module to write and read from E\+E\+P\+R\+O\+M using I2\+C. 
+
+\begin{DoxyDate}{Date}
+11/17/2014 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+a7med 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\hypertarget{_e_e_p_r_o_m_8h_a9b96be87feb3d06051077ffd4c53f38d}{\index{E\+E\+P\+R\+O\+M.\+h@{E\+E\+P\+R\+O\+M.\+h}!E\+E\+P\+R\+O\+M\+\_\+\+Init@{E\+E\+P\+R\+O\+M\+\_\+\+Init}}
+\index{E\+E\+P\+R\+O\+M\+\_\+\+Init@{E\+E\+P\+R\+O\+M\+\_\+\+Init}!E\+E\+P\+R\+O\+M.\+h@{E\+E\+P\+R\+O\+M.\+h}}
+\subsubsection[{E\+E\+P\+R\+O\+M\+\_\+\+Init}]{\setlength{\rightskip}{0pt plus 5cm}void E\+E\+P\+R\+O\+M\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_e_e_p_r_o_m_8h_a9b96be87feb3d06051077ffd4c53f38d}
+Description \+: Function is used to initialize I2\+C module inside the Micro controller to initialize the E\+E\+P\+R\+O\+M writing and reading \hypertarget{_e_e_p_r_o_m_8h_a58a58e77b902b3a718daaf97ef52b878}{\index{E\+E\+P\+R\+O\+M.\+h@{E\+E\+P\+R\+O\+M.\+h}!E\+E\+P\+R\+O\+M\+\_\+read\+\_\+byte@{E\+E\+P\+R\+O\+M\+\_\+read\+\_\+byte}}
+\index{E\+E\+P\+R\+O\+M\+\_\+read\+\_\+byte@{E\+E\+P\+R\+O\+M\+\_\+read\+\_\+byte}!E\+E\+P\+R\+O\+M.\+h@{E\+E\+P\+R\+O\+M.\+h}}
+\subsubsection[{E\+E\+P\+R\+O\+M\+\_\+read\+\_\+byte}]{\setlength{\rightskip}{0pt plus 5cm}uint8 E\+E\+P\+R\+O\+M\+\_\+read\+\_\+byte (
+\begin{DoxyParamCaption}
+\item[{uint16}]{addr, }
+\item[{uint8 $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{_e_e_p_r_o_m_8h_a58a58e77b902b3a718daaf97ef52b878}
+Description\+: Function is used to read a byte from E\+E\+P\+R\+O\+M it takes the address of data byte to be read and a pointer to uint8 to recive data in , it return S\+U\+C\+C\+E\+S\+S to tell if it successfully did it \hypertarget{_e_e_p_r_o_m_8h_a7a1e0d407eadbcbbbc4e1cc544a032ac}{\index{E\+E\+P\+R\+O\+M.\+h@{E\+E\+P\+R\+O\+M.\+h}!E\+E\+P\+R\+O\+M\+\_\+read\+\_\+\+Page@{E\+E\+P\+R\+O\+M\+\_\+read\+\_\+\+Page}}
+\index{E\+E\+P\+R\+O\+M\+\_\+read\+\_\+\+Page@{E\+E\+P\+R\+O\+M\+\_\+read\+\_\+\+Page}!E\+E\+P\+R\+O\+M.\+h@{E\+E\+P\+R\+O\+M.\+h}}
+\subsubsection[{E\+E\+P\+R\+O\+M\+\_\+read\+\_\+\+Page}]{\setlength{\rightskip}{0pt plus 5cm}uint8 E\+E\+P\+R\+O\+M\+\_\+read\+\_\+\+Page (
+\begin{DoxyParamCaption}
+\item[{uint8}]{Page, }
+\item[{uint8 $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{_e_e_p_r_o_m_8h_a7a1e0d407eadbcbbbc4e1cc544a032ac}
+Description\+: Function is used to read a byte from E\+E\+P\+R\+O\+M it takes the address of data byte to be read and a pointer to uint8 to recive data in , it return S\+U\+C\+C\+E\+S\+S to tell if it successfully did it \hypertarget{_e_e_p_r_o_m_8h_a8e1a72724a284cc056b09b4373831500}{\index{E\+E\+P\+R\+O\+M.\+h@{E\+E\+P\+R\+O\+M.\+h}!E\+E\+P\+R\+O\+M\+\_\+write\+\_\+byte@{E\+E\+P\+R\+O\+M\+\_\+write\+\_\+byte}}
+\index{E\+E\+P\+R\+O\+M\+\_\+write\+\_\+byte@{E\+E\+P\+R\+O\+M\+\_\+write\+\_\+byte}!E\+E\+P\+R\+O\+M.\+h@{E\+E\+P\+R\+O\+M.\+h}}
+\subsubsection[{E\+E\+P\+R\+O\+M\+\_\+write\+\_\+byte}]{\setlength{\rightskip}{0pt plus 5cm}uint8 E\+E\+P\+R\+O\+M\+\_\+write\+\_\+byte (
+\begin{DoxyParamCaption}
+\item[{uint16}]{addr, }
+\item[{uint8}]{data}
+\end{DoxyParamCaption}
+)}}\label{_e_e_p_r_o_m_8h_a8e1a72724a284cc056b09b4373831500}
+Description \+: Function is used to write a byte to E\+E\+P\+R\+O\+M it takes the address and data to be written and it return 1 to tell if it successfully did it \hypertarget{_e_e_p_r_o_m_8h_aae1db9e6085bf18a8615962be357c08c}{\index{E\+E\+P\+R\+O\+M.\+h@{E\+E\+P\+R\+O\+M.\+h}!E\+E\+P\+R\+O\+M\+\_\+write\+\_\+page@{E\+E\+P\+R\+O\+M\+\_\+write\+\_\+page}}
+\index{E\+E\+P\+R\+O\+M\+\_\+write\+\_\+page@{E\+E\+P\+R\+O\+M\+\_\+write\+\_\+page}!E\+E\+P\+R\+O\+M.\+h@{E\+E\+P\+R\+O\+M.\+h}}
+\subsubsection[{E\+E\+P\+R\+O\+M\+\_\+write\+\_\+page}]{\setlength{\rightskip}{0pt plus 5cm}uint8 E\+E\+P\+R\+O\+M\+\_\+write\+\_\+page (
+\begin{DoxyParamCaption}
+\item[{uint8}]{Page, }
+\item[{uint8 $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{_e_e_p_r_o_m_8h_aae1db9e6085bf18a8615962be357c08c}
+Description\+: Function is used to write to a Page ( of size 8 bytes ) to E\+E\+P\+R\+O\+M it takes the address and data to be written and it return 1 to tell if it successfully did it 

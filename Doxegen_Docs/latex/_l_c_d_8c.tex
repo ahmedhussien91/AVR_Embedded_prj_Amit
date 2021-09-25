@@ -1,0 +1,130 @@
+\hypertarget{_l_c_d_8c}{\section{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+H\+M\+I/\+L\+C\+D.c File Reference}
+\label{_l_c_d_8c}\index{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+H\+M\+I/\+L\+C\+D.\+c@{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+H\+M\+I/\+L\+C\+D.\+c}}
+}
+
+
+L\+C\+D Module for general use.  
+
+
+{\ttfamily \#include \char`\"{}L\+C\+D.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_l_c_d_8c_ad484cc22a9a6bec640097f26d9b35722}{L\+C\+D\+\_\+\+Init} ()
+\item 
+void \hyperlink{_l_c_d_8c_ac23114976a133c7bedd7de21f04cfabb}{L\+C\+D\+\_\+send\+\_\+cmd} (uint8 cmd)
+\item 
+void \hyperlink{_l_c_d_8c_a0034d09b0de50131d75e27e30a5df8f0}{L\+C\+D\+\_\+display\+\_\+char} (uint8 data)
+\item 
+void \hyperlink{_l_c_d_8c_a60cb362df462f3206c69891d18bb83aa}{L\+C\+D\+\_\+display\+\_\+string} (uint8 $\ast$string)
+\item 
+void \hyperlink{_l_c_d_8c_a4bc64f137704ab35ea3e8bf11ae499f6}{L\+C\+D\+\_\+display\+\_\+int} (uint16 integer1)
+\item 
+void \hyperlink{_l_c_d_8c_abe38d05e225c701bebf5a61201331a85}{L\+C\+D\+\_\+clear} ()
+\item 
+void \hyperlink{_l_c_d_8c_a8627e6b232731f364c4ea71f2d56b6a2}{int2str} (uint16 integer1, uint8 $\ast$string)
+\item 
+void \hyperlink{_l_c_d_8c_a9d968e2d6151fe1f55431a10e3be68a1}{L\+C\+D\+\_\+move\+\_\+2ndline} ()
+\item 
+void \hyperlink{_l_c_d_8c_a82819d4daeb2b95e7b1a0e929bd5867b}{L\+C\+D\+\_\+move\+\_\+3rdline} ()
+\item 
+void \hyperlink{_l_c_d_8c_afdb91f9053e83b55f752ef66921f5f6a}{L\+C\+D\+\_\+move\+\_\+4thline} ()
+\item 
+void \hyperlink{_l_c_d_8c_acc0662b2a220d26a347c693de19767a3}{L\+C\+D\+\_\+clear\+\_\+character} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+L\+C\+D Module for general use. 
+
+\begin{DoxyDate}{Date}
+11/1/2014 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+a7med 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\hypertarget{_l_c_d_8c_a8627e6b232731f364c4ea71f2d56b6a2}{\index{L\+C\+D.\+c@{L\+C\+D.\+c}!int2str@{int2str}}
+\index{int2str@{int2str}!L\+C\+D.\+c@{L\+C\+D.\+c}}
+\subsubsection[{int2str}]{\setlength{\rightskip}{0pt plus 5cm}void int2str (
+\begin{DoxyParamCaption}
+\item[{uint16}]{integer1, }
+\item[{uint8 $\ast$}]{string}
+\end{DoxyParamCaption}
+)}}\label{_l_c_d_8c_a8627e6b232731f364c4ea71f2d56b6a2}
+Description\+: Function is used to convert form integer to string \hypertarget{_l_c_d_8c_abe38d05e225c701bebf5a61201331a85}{\index{L\+C\+D.\+c@{L\+C\+D.\+c}!L\+C\+D\+\_\+clear@{L\+C\+D\+\_\+clear}}
+\index{L\+C\+D\+\_\+clear@{L\+C\+D\+\_\+clear}!L\+C\+D.\+c@{L\+C\+D.\+c}}
+\subsubsection[{L\+C\+D\+\_\+clear}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+\_\+clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_l_c_d_8c_abe38d05e225c701bebf5a61201331a85}
+Description\+: Function is used to clear screen and return crusor to its initial position \hypertarget{_l_c_d_8c_acc0662b2a220d26a347c693de19767a3}{\index{L\+C\+D.\+c@{L\+C\+D.\+c}!L\+C\+D\+\_\+clear\+\_\+character@{L\+C\+D\+\_\+clear\+\_\+character}}
+\index{L\+C\+D\+\_\+clear\+\_\+character@{L\+C\+D\+\_\+clear\+\_\+character}!L\+C\+D.\+c@{L\+C\+D.\+c}}
+\subsubsection[{L\+C\+D\+\_\+clear\+\_\+character}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+\_\+clear\+\_\+character (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_l_c_d_8c_acc0662b2a220d26a347c693de19767a3}
+Description\+: Function is used to move cursor to the 4th line \hypertarget{_l_c_d_8c_a0034d09b0de50131d75e27e30a5df8f0}{\index{L\+C\+D.\+c@{L\+C\+D.\+c}!L\+C\+D\+\_\+display\+\_\+char@{L\+C\+D\+\_\+display\+\_\+char}}
+\index{L\+C\+D\+\_\+display\+\_\+char@{L\+C\+D\+\_\+display\+\_\+char}!L\+C\+D.\+c@{L\+C\+D.\+c}}
+\subsubsection[{L\+C\+D\+\_\+display\+\_\+char}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+\_\+display\+\_\+char (
+\begin{DoxyParamCaption}
+\item[{uint8}]{data}
+\end{DoxyParamCaption}
+)}}\label{_l_c_d_8c_a0034d09b0de50131d75e27e30a5df8f0}
+Description\+: Function is used to display data to L\+C\+D \hypertarget{_l_c_d_8c_a4bc64f137704ab35ea3e8bf11ae499f6}{\index{L\+C\+D.\+c@{L\+C\+D.\+c}!L\+C\+D\+\_\+display\+\_\+int@{L\+C\+D\+\_\+display\+\_\+int}}
+\index{L\+C\+D\+\_\+display\+\_\+int@{L\+C\+D\+\_\+display\+\_\+int}!L\+C\+D.\+c@{L\+C\+D.\+c}}
+\subsubsection[{L\+C\+D\+\_\+display\+\_\+int}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+\_\+display\+\_\+int (
+\begin{DoxyParamCaption}
+\item[{uint16}]{integer1}
+\end{DoxyParamCaption}
+)}}\label{_l_c_d_8c_a4bc64f137704ab35ea3e8bf11ae499f6}
+Description\+: Function is used to display integers on screen \hypertarget{_l_c_d_8c_a60cb362df462f3206c69891d18bb83aa}{\index{L\+C\+D.\+c@{L\+C\+D.\+c}!L\+C\+D\+\_\+display\+\_\+string@{L\+C\+D\+\_\+display\+\_\+string}}
+\index{L\+C\+D\+\_\+display\+\_\+string@{L\+C\+D\+\_\+display\+\_\+string}!L\+C\+D.\+c@{L\+C\+D.\+c}}
+\subsubsection[{L\+C\+D\+\_\+display\+\_\+string}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+\_\+display\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{uint8 $\ast$}]{string}
+\end{DoxyParamCaption}
+)}}\label{_l_c_d_8c_a60cb362df462f3206c69891d18bb83aa}
+Description\+: Function is used to display string on screen \hypertarget{_l_c_d_8c_ad484cc22a9a6bec640097f26d9b35722}{\index{L\+C\+D.\+c@{L\+C\+D.\+c}!L\+C\+D\+\_\+\+Init@{L\+C\+D\+\_\+\+Init}}
+\index{L\+C\+D\+\_\+\+Init@{L\+C\+D\+\_\+\+Init}!L\+C\+D.\+c@{L\+C\+D.\+c}}
+\subsubsection[{L\+C\+D\+\_\+\+Init}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_l_c_d_8c_ad484cc22a9a6bec640097f26d9b35722}
+Description\+: Function used to initialize the L\+C\+D in 8 bit 4 Line Mode \& ligth on Display \hypertarget{_l_c_d_8c_a9d968e2d6151fe1f55431a10e3be68a1}{\index{L\+C\+D.\+c@{L\+C\+D.\+c}!L\+C\+D\+\_\+move\+\_\+2ndline@{L\+C\+D\+\_\+move\+\_\+2ndline}}
+\index{L\+C\+D\+\_\+move\+\_\+2ndline@{L\+C\+D\+\_\+move\+\_\+2ndline}!L\+C\+D.\+c@{L\+C\+D.\+c}}
+\subsubsection[{L\+C\+D\+\_\+move\+\_\+2ndline}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+\_\+move\+\_\+2ndline (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_l_c_d_8c_a9d968e2d6151fe1f55431a10e3be68a1}
+Description\+: Function is used to move cursor to the 2nd line \hypertarget{_l_c_d_8c_a82819d4daeb2b95e7b1a0e929bd5867b}{\index{L\+C\+D.\+c@{L\+C\+D.\+c}!L\+C\+D\+\_\+move\+\_\+3rdline@{L\+C\+D\+\_\+move\+\_\+3rdline}}
+\index{L\+C\+D\+\_\+move\+\_\+3rdline@{L\+C\+D\+\_\+move\+\_\+3rdline}!L\+C\+D.\+c@{L\+C\+D.\+c}}
+\subsubsection[{L\+C\+D\+\_\+move\+\_\+3rdline}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+\_\+move\+\_\+3rdline (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_l_c_d_8c_a82819d4daeb2b95e7b1a0e929bd5867b}
+Description\+: Function is used to move cursor to the 3rd line \hypertarget{_l_c_d_8c_afdb91f9053e83b55f752ef66921f5f6a}{\index{L\+C\+D.\+c@{L\+C\+D.\+c}!L\+C\+D\+\_\+move\+\_\+4thline@{L\+C\+D\+\_\+move\+\_\+4thline}}
+\index{L\+C\+D\+\_\+move\+\_\+4thline@{L\+C\+D\+\_\+move\+\_\+4thline}!L\+C\+D.\+c@{L\+C\+D.\+c}}
+\subsubsection[{L\+C\+D\+\_\+move\+\_\+4thline}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+\_\+move\+\_\+4thline (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_l_c_d_8c_afdb91f9053e83b55f752ef66921f5f6a}
+Description\+: Function is used to move cursor to the 4th line \hypertarget{_l_c_d_8c_ac23114976a133c7bedd7de21f04cfabb}{\index{L\+C\+D.\+c@{L\+C\+D.\+c}!L\+C\+D\+\_\+send\+\_\+cmd@{L\+C\+D\+\_\+send\+\_\+cmd}}
+\index{L\+C\+D\+\_\+send\+\_\+cmd@{L\+C\+D\+\_\+send\+\_\+cmd}!L\+C\+D.\+c@{L\+C\+D.\+c}}
+\subsubsection[{L\+C\+D\+\_\+send\+\_\+cmd}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+\_\+send\+\_\+cmd (
+\begin{DoxyParamCaption}
+\item[{uint8}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{_l_c_d_8c_ac23114976a133c7bedd7de21f04cfabb}
+Description\+: Function used to send instruction to L\+C\+D 

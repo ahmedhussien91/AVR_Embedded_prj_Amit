@@ -1,0 +1,149 @@
+.TH "C:/Users/a7med/Desktop/Embbeded Project/Project code/Door_locker_project/Door_locker_project_CNTRL/Door_locker_CNTRL_ECU/motor.h" 3 "Sat Nov 22 2014" "Door_locker_system" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/a7med/Desktop/Embbeded Project/Project code/Door_locker_project/Door_locker_project_CNTRL/Door_locker_CNTRL_ECU/motor.h \- 
+.PP
+motor Module contain functions to control all motors in the system  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Timer\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDC_MOTOR_WORKING_DELAY\fP   1000"
+.br
+.ti -1c
+.RI "#define \fBL293D_IN1\fP   PD2"
+.br
+.ti -1c
+.RI "#define \fBL293D_IN2\fP   PD3"
+.br
+.ti -1c
+.RI "#define \fBL293D_EN1\fP   PC5"
+.br
+.ti -1c
+.RI "#define \fBL293D_IN1_PORT\fP   'D'"
+.br
+.ti -1c
+.RI "#define \fBL293D_IN2_PORT\fP   'D'"
+.br
+.ti -1c
+.RI "#define \fBL293D_EN1_PORT\fP   'C'"
+.br
+.ti -1c
+.RI "#define \fBULN2003_PORT\fP   'A'"
+.br
+.ti -1c
+.RI "#define \fBULN2003_A\fP   PA0"
+.br
+.ti -1c
+.RI "#define \fBULN2003_B\fP   PA1"
+.br
+.ti -1c
+.RI "#define \fBULN2003_Abar\fP   PA2"
+.br
+.ti -1c
+.RI "#define \fBULN2003_Bbar\fP   PA3"
+.br
+.ti -1c
+.RI "#define \fBSTEPPER_MOTOR_RESPONSE_TIME\fP   500"
+.br
+.ti -1c
+.RI "#define \fBDUTY_1MS\fP   16"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBMOTOR_DC_Init\fP (void)"
+.br
+.ti -1c
+.RI "void \fBMOTOR_STEPPER_Init\fP (void)"
+.br
+.ti -1c
+.RI "void \fBMOTOR_SERVO_Init\fP (void)"
+.br
+.ti -1c
+.RI "void \fBMOTOR_DC_Open\fP (void)"
+.br
+.ti -1c
+.RI "void \fBMOTOR_STEPPER_Open\fP (void)"
+.br
+.ti -1c
+.RI "void \fBMOTOR_DC_close\fP (void)"
+.br
+.ti -1c
+.RI "void \fBMOTOR_STEPPER_Close\fP (void)"
+.br
+.ti -1c
+.RI "void \fBMOTOR_SERVO_Set_angle\fP (uint8 angle)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+motor Module contain functions to control all motors in the system 
+
+
+.PP
+\fBDate:\fP
+.RS 4
+11/9/2014 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+a7med 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+
+.PP
+Definition in file \fBmotor\&.h\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void MOTOR_DC_close (void)"
+Description: Function is used to o/p PIN_A=0 ,PIN_b=1 ,PIN_enable=1 for 1 sec to close lock then configure PIN_b=0 to stop motor 
+.PP
+Definition at line 105 of file motor\&.c\&.
+.SS "void MOTOR_DC_Init (void)"
+Description: Function is used to configure DC motor pins to output 
+.PP
+Definition at line 30 of file motor\&.c\&.
+.SS "void MOTOR_DC_Open (void)"
+Description: Function is used to o/p PIN_A=1 ,PIN_b=0 ,PIN_enable=1 for 1 sec to open lock then configure PIN_b=1 to stop motor 
+.PP
+Definition at line 52 of file motor\&.c\&.
+.SS "void MOTOR_SERVO_Init (void)"
+Description: Function is used to configure servo motor pin ( timer 0 OC0) to output and set its angle to 0 which is equivalent to 1ms duty cycle 
+.PP
+Definition at line 155 of file motor\&.c\&.
+.SS "void MOTOR_SERVO_Set_angle (uint8angle)"
+Description: Function is used to set angle of servo motor function take angles between 0 and 180 
+.PP
+Definition at line 163 of file motor\&.c\&.
+.SS "void MOTOR_STEPPER_Close (void)"
+Description: Function is used to rotate the stepper motor 360 degree rotation in the anticlockwise direction to close lock 
+.PP
+Definition at line 117 of file motor\&.c\&.
+.SS "void MOTOR_STEPPER_Init (void)"
+Description: Function is used to configure stepper motor pins to output 
+.PP
+Definition at line 40 of file motor\&.c\&.
+.SS "void MOTOR_STEPPER_Open (void)"
+Description: Function is used to rotate the stepper motor 360 degree rotation in the clockwise direction to open lock 
+.PP
+Definition at line 67 of file motor\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Door_locker_system from the source code\&.

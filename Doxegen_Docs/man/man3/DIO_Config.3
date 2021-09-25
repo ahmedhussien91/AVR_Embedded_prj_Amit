@@ -1,0 +1,45 @@
+.TH "DIO_Config" 3 "Sat Nov 22 2014" "Door_locker_system" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DIO_Config \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DIO\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "uint8 \fBport\fP"
+.br
+.ti -1c
+.RI "uint8 \fBpin_num\fP"
+.br
+.ti -1c
+.RI "uint8 \fBdirection\fP"
+.br
+.ti -1c
+.RI "uint8 \fBvalue\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Description: Structure to describe each individual PIN contains:
+.IP "1." 4
+the PORT Which the pin belongs to\&. 'A 'B' 'C' or 'D'
+.IP "2." 4
+the number of the pin in the PORT\&.
+.IP "3." 4
+the direction of pin --> INPUT or OUTPUT
+.IP "4." 4
+the value of the pin used for write 
+.PP
+
+.PP
+Definition at line 30 of file DIO\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Door_locker_system from the source code\&.

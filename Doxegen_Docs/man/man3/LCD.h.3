@@ -1,0 +1,186 @@
+.TH "C:/Users/a7med/Desktop/Embbeded Project/Project code/Door_locker_project/Door_locker_project_HMI/LCD.h" 3 "Sat Nov 22 2014" "Door_locker_system" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/a7med/Desktop/Embbeded Project/Project code/Door_locker_project/Door_locker_project_HMI/LCD.h \- 
+.PP
+LCD Module for general use\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <util/delay\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include 'DIO\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBData_DIR\fP   DDRC"
+.br
+.ti -1c
+.RI "#define \fBData_PORT\fP   PORTC"
+.br
+.ti -1c
+.RI "#define \fBCTRL_DIR\fP   DDRD"
+.br
+.ti -1c
+.RI "#define \fBCTRL_PORT\fP   PORTD"
+.br
+.ti -1c
+.RI "#define \fBRS\fP   PD2"
+.br
+.ti -1c
+.RI "#define \fBE\fP   PD4"
+.br
+.ti -1c
+.RI "#define \fBRW\fP   PD3"
+.br
+.ti -1c
+.RI "#define \fBMode8_4lines\fP   0x38"
+.br
+.ti -1c
+.RI "#define \fBDisplay_off\fP   0x08"
+.br
+.ti -1c
+.RI "#define \fBMode8_1line\fP   0x32"
+.br
+.ti -1c
+.RI "#define \fBEntry_Mode_init\fP   0x06"
+.br
+.ti -1c
+.RI "#define \fBEntry_Mode\fP   0x04"
+.br
+.ti -1c
+.RI "#define \fBDisplay_on\fP   0x0f"
+.br
+.ti -1c
+.RI "#define \fBClear_display\fP   0x01"
+.br
+.ti -1c
+.RI "#define \fBreturn_home\fP   0x03"
+.br
+.ti -1c
+.RI "#define \fBDDRAM_add_2ndline\fP   0xc0"
+.br
+.ti -1c
+.RI "#define \fBDDRAM_add_3rdline\fP   0x94"
+.br
+.ti -1c
+.RI "#define \fBDDRAM_add_4thline\fP   0xd4"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBLCD_Init\fP (void)"
+.br
+.ti -1c
+.RI "void \fBLCD_send_cmd\fP (uint8 cmd)"
+.br
+.ti -1c
+.RI "void \fBLCD_display_char\fP (uint8 data)"
+.br
+.ti -1c
+.RI "void \fBLCD_display_string\fP (uint8 *string)"
+.br
+.ti -1c
+.RI "void \fBLCD_display_int\fP (uint16 integer)"
+.br
+.ti -1c
+.RI "void \fBLCD_clear\fP ()"
+.br
+.ti -1c
+.RI "void \fBint2str\fP (uint16 integer1, uint8 *b)"
+.br
+.ti -1c
+.RI "void \fBLCD_move_2ndline\fP ()"
+.br
+.ti -1c
+.RI "void \fBLCD_move_3rdline\fP ()"
+.br
+.ti -1c
+.RI "void \fBLCD_move_4thline\fP ()"
+.br
+.ti -1c
+.RI "void \fBLCD_clear_character\fP (void)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+LCD Module for general use\&. 
+
+
+.PP
+\fBDate:\fP
+.RS 4
+11/1/2014 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+a7med 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+
+.PP
+Definition in file \fBLCD\&.h\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void int2str (uint16integer1, uint8 *string)"
+Description: Function is used to convert form integer to string 
+.PP
+Definition at line 90 of file LCD\&.c\&.
+.SS "void LCD_clear ()"
+Description: Function is used to clear screen and return crusor to its initial position 
+.PP
+Definition at line 82 of file LCD\&.c\&.
+.SS "void LCD_clear_character (void)"
+Description: Function is used to move cursor to the 4th line 
+.PP
+Definition at line 144 of file LCD\&.c\&.
+.SS "void LCD_display_char (uint8data)"
+Description: Function is used to display data to LCD 
+.PP
+Definition at line 45 of file LCD\&.c\&.
+.SS "void LCD_display_int (uint16integer1)"
+Description: Function is used to display integers on screen 
+.PP
+Definition at line 72 of file LCD\&.c\&.
+.SS "void LCD_display_string (uint8 *string)"
+Description: Function is used to display string on screen 
+.PP
+Definition at line 58 of file LCD\&.c\&.
+.SS "void LCD_Init (void)"
+Description: Function used to initialize the LCD in 8 bit 4 Line Mode & ligth on Display 
+.PP
+Definition at line 15 of file LCD\&.c\&.
+.SS "void LCD_move_2ndline ()"
+Description: Function is used to move cursor to the 2nd line 
+.PP
+Definition at line 117 of file LCD\&.c\&.
+.SS "void LCD_move_3rdline ()"
+Description: Function is used to move cursor to the 3rd line 
+.PP
+Definition at line 126 of file LCD\&.c\&.
+.SS "void LCD_move_4thline ()"
+Description: Function is used to move cursor to the 4th line 
+.PP
+Definition at line 135 of file LCD\&.c\&.
+.SS "void LCD_send_cmd (uint8cmd)"
+Description: Function used to send instruction to LCD 
+.PP
+Definition at line 32 of file LCD\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Door_locker_system from the source code\&.

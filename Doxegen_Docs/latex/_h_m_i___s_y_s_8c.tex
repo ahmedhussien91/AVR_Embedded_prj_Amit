@@ -1,0 +1,90 @@
+\hypertarget{_h_m_i___s_y_s_8c}{\section{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+H\+M\+I/\+H\+M\+I\+\_\+\+S\+Y\+S.c File Reference}
+\label{_h_m_i___s_y_s_8c}\index{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+H\+M\+I/\+H\+M\+I\+\_\+\+S\+Y\+S.\+c@{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+H\+M\+I/\+H\+M\+I\+\_\+\+S\+Y\+S.\+c}}
+}
+
+
+Module for H\+M\+I E\+C\+U used to initialize H\+M\+I system,interface with user to setup password and receive menu option and send it to C\+N\+T\+R\+L E\+C\+U.  
+
+
+{\ttfamily \#include \char`\"{}H\+M\+I\+\_\+\+S\+Y\+S.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_h_m_i___s_y_s_8c_a9022ab531ffdfca47ce38e55bffb09a7}{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+\+Init} (void)
+\item 
+uint8 \hyperlink{_h_m_i___s_y_s_8c_aef8cdae442a01b8895074b0a94913364}{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+setup\+\_\+password} (void)
+\item 
+void \hyperlink{_h_m_i___s_y_s_8c_abfca69630545fbf28330f72a1ef55aa0}{S\+Y\+S\+\_\+check\+\_\+\+Password\+\_\+\+E\+E\+P\+R\+O\+M} (void)
+\item 
+void \hyperlink{_h_m_i___s_y_s_8c_aa26c184315204966d229de0af72d7dcd}{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+menu\+\_\+option\+\_\+send} (uint8 menu\+\_\+option)
+\item 
+uint8 \hyperlink{_h_m_i___s_y_s_8c_ac63a45e228a0e726b946c3a807fcedf5}{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+get\+\_\+menu\+\_\+option} (void)
+\item 
+void \hyperlink{_h_m_i___s_y_s_8c_a9a89933acf9985a9c45eb71d849399fe}{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+resend\+\_\+menu\+\_\+option} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_h_m_i___s_y_s_8c_a310da2fe77c40fc7c8443419e5215a00}{\hyperlink{_c_n_t_r_l___s_y_s_8h_aa4e680b11d3edf18bafc01071e82c182}{pass} {\bfseries password} = \{.frist\+\_\+time\+\_\+flag = 0, .passwrd=\{0,0,0,0\} ,.password\+\_\+correctly\+\_\+enterd\+\_\+flag = 0, .password\+\_\+saved\+\_\+flag = 0 \}}\label{_h_m_i___s_y_s_8c_a310da2fe77c40fc7c8443419e5215a00}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Module for H\+M\+I E\+C\+U used to initialize H\+M\+I system,interface with user to setup password and receive menu option and send it to C\+N\+T\+R\+L E\+C\+U. 
+
+\begin{DoxyDate}{Date}
+11/19/2014 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+a7med 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\hypertarget{_h_m_i___s_y_s_8c_abfca69630545fbf28330f72a1ef55aa0}{\index{H\+M\+I\+\_\+\+S\+Y\+S.\+c@{H\+M\+I\+\_\+\+S\+Y\+S.\+c}!S\+Y\+S\+\_\+check\+\_\+\+Password\+\_\+\+E\+E\+P\+R\+O\+M@{S\+Y\+S\+\_\+check\+\_\+\+Password\+\_\+\+E\+E\+P\+R\+O\+M}}
+\index{S\+Y\+S\+\_\+check\+\_\+\+Password\+\_\+\+E\+E\+P\+R\+O\+M@{S\+Y\+S\+\_\+check\+\_\+\+Password\+\_\+\+E\+E\+P\+R\+O\+M}!H\+M\+I\+\_\+\+S\+Y\+S.\+c@{H\+M\+I\+\_\+\+S\+Y\+S.\+c}}
+\subsubsection[{S\+Y\+S\+\_\+check\+\_\+\+Password\+\_\+\+E\+E\+P\+R\+O\+M}]{\setlength{\rightskip}{0pt plus 5cm}void S\+Y\+S\+\_\+check\+\_\+\+Password\+\_\+\+E\+E\+P\+R\+O\+M (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_h_m_i___s_y_s_8c_abfca69630545fbf28330f72a1ef55aa0}
+Description\+: Function is used to get the status of password form C\+N\+T\+R\+L unit using U\+A\+R\+T \hypertarget{_h_m_i___s_y_s_8c_ac63a45e228a0e726b946c3a807fcedf5}{\index{H\+M\+I\+\_\+\+S\+Y\+S.\+c@{H\+M\+I\+\_\+\+S\+Y\+S.\+c}!S\+Y\+S\+\_\+\+H\+M\+I\+\_\+get\+\_\+menu\+\_\+option@{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+get\+\_\+menu\+\_\+option}}
+\index{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+get\+\_\+menu\+\_\+option@{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+get\+\_\+menu\+\_\+option}!H\+M\+I\+\_\+\+S\+Y\+S.\+c@{H\+M\+I\+\_\+\+S\+Y\+S.\+c}}
+\subsubsection[{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+get\+\_\+menu\+\_\+option}]{\setlength{\rightskip}{0pt plus 5cm}uint8 S\+Y\+S\+\_\+\+H\+M\+I\+\_\+get\+\_\+menu\+\_\+option (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_h_m_i___s_y_s_8c_ac63a45e228a0e726b946c3a807fcedf5}
+Description\+: Function is used to get menu option from user \hypertarget{_h_m_i___s_y_s_8c_a9022ab531ffdfca47ce38e55bffb09a7}{\index{H\+M\+I\+\_\+\+S\+Y\+S.\+c@{H\+M\+I\+\_\+\+S\+Y\+S.\+c}!S\+Y\+S\+\_\+\+H\+M\+I\+\_\+\+Init@{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+\+Init}}
+\index{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+\+Init@{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+\+Init}!H\+M\+I\+\_\+\+S\+Y\+S.\+c@{H\+M\+I\+\_\+\+S\+Y\+S.\+c}}
+\subsubsection[{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+\+Init}]{\setlength{\rightskip}{0pt plus 5cm}void S\+Y\+S\+\_\+\+H\+M\+I\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_h_m_i___s_y_s_8c_a9022ab531ffdfca47ce38e55bffb09a7}
+Description\+: Function is used to Initialize H\+M\+I system \hypertarget{_h_m_i___s_y_s_8c_aa26c184315204966d229de0af72d7dcd}{\index{H\+M\+I\+\_\+\+S\+Y\+S.\+c@{H\+M\+I\+\_\+\+S\+Y\+S.\+c}!S\+Y\+S\+\_\+\+H\+M\+I\+\_\+menu\+\_\+option\+\_\+send@{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+menu\+\_\+option\+\_\+send}}
+\index{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+menu\+\_\+option\+\_\+send@{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+menu\+\_\+option\+\_\+send}!H\+M\+I\+\_\+\+S\+Y\+S.\+c@{H\+M\+I\+\_\+\+S\+Y\+S.\+c}}
+\subsubsection[{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+menu\+\_\+option\+\_\+send}]{\setlength{\rightskip}{0pt plus 5cm}void S\+Y\+S\+\_\+\+H\+M\+I\+\_\+menu\+\_\+option\+\_\+send (
+\begin{DoxyParamCaption}
+\item[{uint8}]{menu\+\_\+option}
+\end{DoxyParamCaption}
+)}}\label{_h_m_i___s_y_s_8c_aa26c184315204966d229de0af72d7dcd}
+Description\+: Function is used to send menu option to C\+N\+T\+R\+L unit \hypertarget{_h_m_i___s_y_s_8c_a9a89933acf9985a9c45eb71d849399fe}{\index{H\+M\+I\+\_\+\+S\+Y\+S.\+c@{H\+M\+I\+\_\+\+S\+Y\+S.\+c}!S\+Y\+S\+\_\+\+H\+M\+I\+\_\+resend\+\_\+menu\+\_\+option@{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+resend\+\_\+menu\+\_\+option}}
+\index{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+resend\+\_\+menu\+\_\+option@{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+resend\+\_\+menu\+\_\+option}!H\+M\+I\+\_\+\+S\+Y\+S.\+c@{H\+M\+I\+\_\+\+S\+Y\+S.\+c}}
+\subsubsection[{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+resend\+\_\+menu\+\_\+option}]{\setlength{\rightskip}{0pt plus 5cm}void S\+Y\+S\+\_\+\+H\+M\+I\+\_\+resend\+\_\+menu\+\_\+option (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_h_m_i___s_y_s_8c_a9a89933acf9985a9c45eb71d849399fe}
+Description\+: Function is used to resend the menu option \hypertarget{_h_m_i___s_y_s_8c_aef8cdae442a01b8895074b0a94913364}{\index{H\+M\+I\+\_\+\+S\+Y\+S.\+c@{H\+M\+I\+\_\+\+S\+Y\+S.\+c}!S\+Y\+S\+\_\+\+H\+M\+I\+\_\+setup\+\_\+password@{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+setup\+\_\+password}}
+\index{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+setup\+\_\+password@{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+setup\+\_\+password}!H\+M\+I\+\_\+\+S\+Y\+S.\+c@{H\+M\+I\+\_\+\+S\+Y\+S.\+c}}
+\subsubsection[{S\+Y\+S\+\_\+\+H\+M\+I\+\_\+setup\+\_\+password}]{\setlength{\rightskip}{0pt plus 5cm}uint8 S\+Y\+S\+\_\+\+H\+M\+I\+\_\+setup\+\_\+password (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_h_m_i___s_y_s_8c_aef8cdae442a01b8895074b0a94913364}
+Description\+: Function is used to Initialize H\+M\+I system and setup password if not set and return the value of menu option 

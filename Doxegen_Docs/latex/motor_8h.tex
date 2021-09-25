@@ -1,0 +1,147 @@
+\hypertarget{motor_8h}{\section{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+C\+N\+T\+R\+L/\+Door\+\_\+locker\+\_\+\+C\+N\+T\+R\+L\+\_\+\+E\+C\+U/motor.h File Reference}
+\label{motor_8h}\index{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+C\+N\+T\+R\+L/\+Door\+\_\+locker\+\_\+\+C\+N\+T\+R\+L\+\_\+\+E\+C\+U/motor.\+h@{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+C\+N\+T\+R\+L/\+Door\+\_\+locker\+\_\+\+C\+N\+T\+R\+L\+\_\+\+E\+C\+U/motor.\+h}}
+}
+
+
+motor Module contain functions to control all motors in the system  
+
+
+{\ttfamily \#include \char`\"{}Timer.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{motor_8h_a1751ffccec7c760d4712b5077ec6bf45}{\#define {\bfseries D\+C\+\_\+\+M\+O\+T\+O\+R\+\_\+\+W\+O\+R\+K\+I\+N\+G\+\_\+\+D\+E\+L\+A\+Y}~1000}\label{motor_8h_a1751ffccec7c760d4712b5077ec6bf45}
+
+\item 
+\hypertarget{motor_8h_a6a6ba01cf598cfe8ca5e860c3a9e95c6}{\#define {\bfseries L293\+D\+\_\+\+I\+N1}~P\+D2}\label{motor_8h_a6a6ba01cf598cfe8ca5e860c3a9e95c6}
+
+\item 
+\hypertarget{motor_8h_ad1545b84a88623933096386ab01fb10d}{\#define {\bfseries L293\+D\+\_\+\+I\+N2}~P\+D3}\label{motor_8h_ad1545b84a88623933096386ab01fb10d}
+
+\item 
+\hypertarget{motor_8h_a469fb40e95364441c05ba9fe3160cb1a}{\#define {\bfseries L293\+D\+\_\+\+E\+N1}~P\+C5}\label{motor_8h_a469fb40e95364441c05ba9fe3160cb1a}
+
+\item 
+\hypertarget{motor_8h_a44f160d72f564511ffa16eaf4e8abda5}{\#define {\bfseries L293\+D\+\_\+\+I\+N1\+\_\+\+P\+O\+R\+T}~'D'}\label{motor_8h_a44f160d72f564511ffa16eaf4e8abda5}
+
+\item 
+\hypertarget{motor_8h_a7ff52fba4f54e2632a3e300451bd8d4b}{\#define {\bfseries L293\+D\+\_\+\+I\+N2\+\_\+\+P\+O\+R\+T}~'D'}\label{motor_8h_a7ff52fba4f54e2632a3e300451bd8d4b}
+
+\item 
+\hypertarget{motor_8h_ac05de10a4ba7787d86946628bd9c229e}{\#define {\bfseries L293\+D\+\_\+\+E\+N1\+\_\+\+P\+O\+R\+T}~'C'}\label{motor_8h_ac05de10a4ba7787d86946628bd9c229e}
+
+\item 
+\hypertarget{motor_8h_a47e0a713d40924bae137840495a1d41c}{\#define {\bfseries U\+L\+N2003\+\_\+\+P\+O\+R\+T}~'A'}\label{motor_8h_a47e0a713d40924bae137840495a1d41c}
+
+\item 
+\hypertarget{motor_8h_a0c3a9a04f26e4fcddc5219804200b251}{\#define {\bfseries U\+L\+N2003\+\_\+\+A}~P\+A0}\label{motor_8h_a0c3a9a04f26e4fcddc5219804200b251}
+
+\item 
+\hypertarget{motor_8h_a067702949ea6315f1e361528e0eb1491}{\#define {\bfseries U\+L\+N2003\+\_\+\+B}~P\+A1}\label{motor_8h_a067702949ea6315f1e361528e0eb1491}
+
+\item 
+\hypertarget{motor_8h_a08c87e7efeff964de5506713e8d0379e}{\#define {\bfseries U\+L\+N2003\+\_\+\+Abar}~P\+A2}\label{motor_8h_a08c87e7efeff964de5506713e8d0379e}
+
+\item 
+\hypertarget{motor_8h_abb517281c84d74ed98d1f5118a0843c7}{\#define {\bfseries U\+L\+N2003\+\_\+\+Bbar}~P\+A3}\label{motor_8h_abb517281c84d74ed98d1f5118a0843c7}
+
+\item 
+\hypertarget{motor_8h_a7f89574b4f76f3e29ef75469176dc7c8}{\#define {\bfseries S\+T\+E\+P\+P\+E\+R\+\_\+\+M\+O\+T\+O\+R\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+T\+I\+M\+E}~500}\label{motor_8h_a7f89574b4f76f3e29ef75469176dc7c8}
+
+\item 
+\hypertarget{motor_8h_a13ef13010865975856761576c22b765c}{\#define {\bfseries D\+U\+T\+Y\+\_\+1\+M\+S}~16}\label{motor_8h_a13ef13010865975856761576c22b765c}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{motor_8h_ab91ebac95d894e58733ff9496d370a85}{M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+\+Init} (void)
+\item 
+void \hyperlink{motor_8h_a1430cd61c2eeb71ed61b78c72a5ea3a1}{M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Init} (void)
+\item 
+void \hyperlink{motor_8h_a5734ce0eb3f18458d303f881bbca4bda}{M\+O\+T\+O\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+Init} (void)
+\item 
+void \hyperlink{motor_8h_a6038f9cacd74cd9c27a6c8cf57bb0a39}{M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+\+Open} (void)
+\item 
+void \hyperlink{motor_8h_aea548506c227055da8ec9374a2c70c75}{M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Open} (void)
+\item 
+void \hyperlink{motor_8h_a4e16aca7dfc484dd40380e853265dec0}{M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+close} (void)
+\item 
+void \hyperlink{motor_8h_ac4b64d15c91fe574bccebb503573a20f}{M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Close} (void)
+\item 
+void \hyperlink{motor_8h_a0f047b2fea0c8e0ae1bd8208140b329b}{M\+O\+T\+O\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+Set\+\_\+angle} (uint8 angle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+motor Module contain functions to control all motors in the system 
+
+\begin{DoxyDate}{Date}
+11/9/2014 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+a7med 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\hypertarget{motor_8h_a4e16aca7dfc484dd40380e853265dec0}{\index{motor.\+h@{motor.\+h}!M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+close@{M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+close}}
+\index{M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+close@{M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+close}!motor.\+h@{motor.\+h}}
+\subsubsection[{M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+close}]{\setlength{\rightskip}{0pt plus 5cm}void M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+close (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{motor_8h_a4e16aca7dfc484dd40380e853265dec0}
+Description\+: Function is used to o/p P\+I\+N\+\_\+\+A=0 ,P\+I\+N\+\_\+b=1 ,P\+I\+N\+\_\+enable=1 for 1 sec to close lock then configure P\+I\+N\+\_\+b=0 to stop motor \hypertarget{motor_8h_ab91ebac95d894e58733ff9496d370a85}{\index{motor.\+h@{motor.\+h}!M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+\+Init@{M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+\+Init}}
+\index{M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+\+Init@{M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+\+Init}!motor.\+h@{motor.\+h}}
+\subsubsection[{M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+\+Init}]{\setlength{\rightskip}{0pt plus 5cm}void M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{motor_8h_ab91ebac95d894e58733ff9496d370a85}
+Description\+: Function is used to configure D\+C motor pins to output \hypertarget{motor_8h_a6038f9cacd74cd9c27a6c8cf57bb0a39}{\index{motor.\+h@{motor.\+h}!M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+\+Open@{M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+\+Open}}
+\index{M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+\+Open@{M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+\+Open}!motor.\+h@{motor.\+h}}
+\subsubsection[{M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+\+Open}]{\setlength{\rightskip}{0pt plus 5cm}void M\+O\+T\+O\+R\+\_\+\+D\+C\+\_\+\+Open (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{motor_8h_a6038f9cacd74cd9c27a6c8cf57bb0a39}
+Description\+: Function is used to o/p P\+I\+N\+\_\+\+A=1 ,P\+I\+N\+\_\+b=0 ,P\+I\+N\+\_\+enable=1 for 1 sec to open lock then configure P\+I\+N\+\_\+b=1 to stop motor \hypertarget{motor_8h_a5734ce0eb3f18458d303f881bbca4bda}{\index{motor.\+h@{motor.\+h}!M\+O\+T\+O\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+Init@{M\+O\+T\+O\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+Init}}
+\index{M\+O\+T\+O\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+Init@{M\+O\+T\+O\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+Init}!motor.\+h@{motor.\+h}}
+\subsubsection[{M\+O\+T\+O\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+Init}]{\setlength{\rightskip}{0pt plus 5cm}void M\+O\+T\+O\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{motor_8h_a5734ce0eb3f18458d303f881bbca4bda}
+Description\+: Function is used to configure servo motor pin ( timer 0 O\+C0) to output and set its angle to 0 which is equivalent to 1ms duty cycle \hypertarget{motor_8h_a0f047b2fea0c8e0ae1bd8208140b329b}{\index{motor.\+h@{motor.\+h}!M\+O\+T\+O\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+Set\+\_\+angle@{M\+O\+T\+O\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+Set\+\_\+angle}}
+\index{M\+O\+T\+O\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+Set\+\_\+angle@{M\+O\+T\+O\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+Set\+\_\+angle}!motor.\+h@{motor.\+h}}
+\subsubsection[{M\+O\+T\+O\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+Set\+\_\+angle}]{\setlength{\rightskip}{0pt plus 5cm}void M\+O\+T\+O\+R\+\_\+\+S\+E\+R\+V\+O\+\_\+\+Set\+\_\+angle (
+\begin{DoxyParamCaption}
+\item[{uint8}]{angle}
+\end{DoxyParamCaption}
+)}}\label{motor_8h_a0f047b2fea0c8e0ae1bd8208140b329b}
+Description\+: Function is used to set angle of servo motor function take angles between 0 and 180 \hypertarget{motor_8h_ac4b64d15c91fe574bccebb503573a20f}{\index{motor.\+h@{motor.\+h}!M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Close@{M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Close}}
+\index{M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Close@{M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Close}!motor.\+h@{motor.\+h}}
+\subsubsection[{M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Close}]{\setlength{\rightskip}{0pt plus 5cm}void M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Close (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{motor_8h_ac4b64d15c91fe574bccebb503573a20f}
+Description\+: Function is used to rotate the stepper motor 360 degree rotation in the anticlockwise direction to close lock \hypertarget{motor_8h_a1430cd61c2eeb71ed61b78c72a5ea3a1}{\index{motor.\+h@{motor.\+h}!M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Init@{M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Init}}
+\index{M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Init@{M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Init}!motor.\+h@{motor.\+h}}
+\subsubsection[{M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Init}]{\setlength{\rightskip}{0pt plus 5cm}void M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{motor_8h_a1430cd61c2eeb71ed61b78c72a5ea3a1}
+Description\+: Function is used to configure stepper motor pins to output \hypertarget{motor_8h_aea548506c227055da8ec9374a2c70c75}{\index{motor.\+h@{motor.\+h}!M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Open@{M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Open}}
+\index{M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Open@{M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Open}!motor.\+h@{motor.\+h}}
+\subsubsection[{M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Open}]{\setlength{\rightskip}{0pt plus 5cm}void M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+P\+P\+E\+R\+\_\+\+Open (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{motor_8h_aea548506c227055da8ec9374a2c70c75}
+Description\+: Function is used to rotate the stepper motor 360 degree rotation in the clockwise direction to open lock 

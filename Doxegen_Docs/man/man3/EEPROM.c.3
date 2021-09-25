@@ -1,0 +1,82 @@
+.TH "C:/Users/a7med/Desktop/Embbeded Project/Project code/Door_locker_project/Door_locker_project_CNTRL/Door_locker_CNTRL_ECU/EEPROM.c" 3 "Sat Nov 22 2014" "Door_locker_system" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/a7med/Desktop/Embbeded Project/Project code/Door_locker_project/Door_locker_project_CNTRL/Door_locker_CNTRL_ECU/EEPROM.c \- 
+.PP
+EEPROM module to write and read from EEPROM using I2C\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'EEPROM\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBEEPROM_Init\fP (void)"
+.br
+.ti -1c
+.RI "uint8 \fBEEPROM_write_byte\fP (uint16 addr, uint8 data)"
+.br
+.ti -1c
+.RI "uint8 \fBEEPROM_read_byte\fP (uint16 addr, uint8 *data)"
+.br
+.ti -1c
+.RI "uint8 \fBEEPROM_write_page\fP (uint8 Page, uint8 *data)"
+.br
+.ti -1c
+.RI "uint8 \fBEEPROM_read_Page\fP (uint8 Page, uint8 *data)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+EEPROM module to write and read from EEPROM using I2C\&. 
+
+
+.PP
+\fBDate:\fP
+.RS 4
+11/17/2014 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+a7med 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+
+.PP
+Definition in file \fBEEPROM\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void EEPROM_Init (void)"
+Description : Function is used to initialize I2C module inside the Micro controller to initialize the EEPROM writing and reading 
+.PP
+Definition at line 14 of file EEPROM\&.c\&.
+.SS "uint8 EEPROM_read_byte (uint16addr, uint8 *data)"
+Description: Function is used to read a byte from EEPROM it takes the address of data byte to be read and a pointer to uint8 to recive data in , it return SUCCESS to tell if it successfully did it 
+.PP
+Definition at line 59 of file EEPROM\&.c\&.
+.SS "uint8 EEPROM_read_Page (uint8Page, uint8 *data)"
+Description: Function is used to read a byte from EEPROM it takes the address of data byte to be read and a pointer to uint8 to recive data in , it return SUCCESS to tell if it successfully did it 
+.PP
+Definition at line 150 of file EEPROM\&.c\&.
+.SS "uint8 EEPROM_write_byte (uint16addr, uint8data)"
+Description : Function is used to write a byte to EEPROM it takes the address and data to be written and it return 1 to tell if it successfully did it 
+.PP
+Definition at line 23 of file EEPROM\&.c\&.
+.SS "uint8 EEPROM_write_page (uint8Page, uint8 *data)"
+Description: Function is used to write to a Page ( of size 8 bytes ) to EEPROM it takes the address and data to be written and it return 1 to tell if it successfully did it 
+.PP
+Definition at line 108 of file EEPROM\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Door_locker_system from the source code\&.

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Door_locker_CNTRL_ECU", "Door_locker_project_CNTRL\Door_locker_CNTRL_ECU\Door_locker_CNTRL_ECU.cproj", "{8F61D7CA-199B-4138-8FF5-482E6F099BAF}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Door_locker_HMI_ECU", "Door_locker_project_HMI\Door_locker_HMI_ECU.cproj", "{45F4B310-FCE9-4CCF-97E7-DDC1E98E5020}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F61D7CA-199B-4138-8FF5-482E6F099BAF}.Debug|AVR.ActiveCfg = Debug|AVR
+		{8F61D7CA-199B-4138-8FF5-482E6F099BAF}.Debug|AVR.Build.0 = Debug|AVR
+		{8F61D7CA-199B-4138-8FF5-482E6F099BAF}.Release|AVR.ActiveCfg = Release|AVR
+		{8F61D7CA-199B-4138-8FF5-482E6F099BAF}.Release|AVR.Build.0 = Release|AVR
+		{45F4B310-FCE9-4CCF-97E7-DDC1E98E5020}.Debug|AVR.ActiveCfg = Debug|AVR
+		{45F4B310-FCE9-4CCF-97E7-DDC1E98E5020}.Debug|AVR.Build.0 = Debug|AVR
+		{45F4B310-FCE9-4CCF-97E7-DDC1E98E5020}.Release|AVR.ActiveCfg = Release|AVR
+		{45F4B310-FCE9-4CCF-97E7-DDC1E98E5020}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

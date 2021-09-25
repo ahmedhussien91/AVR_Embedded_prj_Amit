@@ -1,0 +1,93 @@
+\hypertarget{_i2_c_8h}{\section{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+C\+N\+T\+R\+L/\+Door\+\_\+locker\+\_\+\+C\+N\+T\+R\+L\+\_\+\+E\+C\+U/\+I2\+C.h File Reference}
+\label{_i2_c_8h}\index{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+C\+N\+T\+R\+L/\+Door\+\_\+locker\+\_\+\+C\+N\+T\+R\+L\+\_\+\+E\+C\+U/\+I2\+C.\+h@{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+C\+N\+T\+R\+L/\+Door\+\_\+locker\+\_\+\+C\+N\+T\+R\+L\+\_\+\+E\+C\+U/\+I2\+C.\+h}}
+}
+
+
+I2\+C communication module.  
+
+
+{\ttfamily \#include \char`\"{}D\+I\+O.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_i2_c_8h_a2793c629f7e2533ab3bf35f43e216e68}{T\+W\+I\+\_\+\+Init} (void)
+\item 
+void \hyperlink{_i2_c_8h_a4911e4a929fa76e1324d7df296e6076c}{T\+W\+I\+\_\+start} (void)
+\item 
+void \hyperlink{_i2_c_8h_a6483f679bb5397c41bb296ebd04d034c}{T\+W\+I\+\_\+stop} (void)
+\item 
+void \hyperlink{_i2_c_8h_a338106b37405546faad3411970cecea3}{T\+W\+I\+\_\+write} (uint8 data)
+\item 
+uint8 \hyperlink{_i2_c_8h_acc2bbbf0a3fac3581ccc4599c0aee605}{T\+W\+I\+\_\+read\+\_\+ack} (void)
+\item 
+uint8 \hyperlink{_i2_c_8h_af139eeb115695a7692f1466b8a356580}{T\+W\+I\+\_\+read\+\_\+\+Nack} (void)
+\item 
+uint8 \hyperlink{_i2_c_8h_a514450a10ed5c6108951c2cf9673e2c8}{T\+W\+I\+\_\+get\+\_\+status} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+I2\+C communication module. 
+
+\begin{DoxyDate}{Date}
+11/15/2014 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+a7med 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\hypertarget{_i2_c_8h_a514450a10ed5c6108951c2cf9673e2c8}{\index{I2\+C.\+h@{I2\+C.\+h}!T\+W\+I\+\_\+get\+\_\+status@{T\+W\+I\+\_\+get\+\_\+status}}
+\index{T\+W\+I\+\_\+get\+\_\+status@{T\+W\+I\+\_\+get\+\_\+status}!I2\+C.\+h@{I2\+C.\+h}}
+\subsubsection[{T\+W\+I\+\_\+get\+\_\+status}]{\setlength{\rightskip}{0pt plus 5cm}uint8 T\+W\+I\+\_\+get\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_i2_c_8h_a514450a10ed5c6108951c2cf9673e2c8}
+Description\+: Function is used to get status of T\+W\+I \hypertarget{_i2_c_8h_a2793c629f7e2533ab3bf35f43e216e68}{\index{I2\+C.\+h@{I2\+C.\+h}!T\+W\+I\+\_\+\+Init@{T\+W\+I\+\_\+\+Init}}
+\index{T\+W\+I\+\_\+\+Init@{T\+W\+I\+\_\+\+Init}!I2\+C.\+h@{I2\+C.\+h}}
+\subsubsection[{T\+W\+I\+\_\+\+Init}]{\setlength{\rightskip}{0pt plus 5cm}void T\+W\+I\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_i2_c_8h_a2793c629f7e2533ab3bf35f43e216e68}
+Description\+: Function is used to Initialize I2\+C module to be ready for using \hypertarget{_i2_c_8h_acc2bbbf0a3fac3581ccc4599c0aee605}{\index{I2\+C.\+h@{I2\+C.\+h}!T\+W\+I\+\_\+read\+\_\+ack@{T\+W\+I\+\_\+read\+\_\+ack}}
+\index{T\+W\+I\+\_\+read\+\_\+ack@{T\+W\+I\+\_\+read\+\_\+ack}!I2\+C.\+h@{I2\+C.\+h}}
+\subsubsection[{T\+W\+I\+\_\+read\+\_\+ack}]{\setlength{\rightskip}{0pt plus 5cm}uint8 T\+W\+I\+\_\+read\+\_\+ack (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_i2_c_8h_acc2bbbf0a3fac3581ccc4599c0aee605}
+Description\+: Function is used to receive data and send acknowledge signal \hypertarget{_i2_c_8h_af139eeb115695a7692f1466b8a356580}{\index{I2\+C.\+h@{I2\+C.\+h}!T\+W\+I\+\_\+read\+\_\+\+Nack@{T\+W\+I\+\_\+read\+\_\+\+Nack}}
+\index{T\+W\+I\+\_\+read\+\_\+\+Nack@{T\+W\+I\+\_\+read\+\_\+\+Nack}!I2\+C.\+h@{I2\+C.\+h}}
+\subsubsection[{T\+W\+I\+\_\+read\+\_\+\+Nack}]{\setlength{\rightskip}{0pt plus 5cm}uint8 T\+W\+I\+\_\+read\+\_\+\+Nack (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_i2_c_8h_af139eeb115695a7692f1466b8a356580}
+Description\+: Function is used to receive data without sending an acknowledgment \hypertarget{_i2_c_8h_a4911e4a929fa76e1324d7df296e6076c}{\index{I2\+C.\+h@{I2\+C.\+h}!T\+W\+I\+\_\+start@{T\+W\+I\+\_\+start}}
+\index{T\+W\+I\+\_\+start@{T\+W\+I\+\_\+start}!I2\+C.\+h@{I2\+C.\+h}}
+\subsubsection[{T\+W\+I\+\_\+start}]{\setlength{\rightskip}{0pt plus 5cm}void T\+W\+I\+\_\+start (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_i2_c_8h_a4911e4a929fa76e1324d7df296e6076c}
+Description\+: Function is used to Send start signal \hypertarget{_i2_c_8h_a6483f679bb5397c41bb296ebd04d034c}{\index{I2\+C.\+h@{I2\+C.\+h}!T\+W\+I\+\_\+stop@{T\+W\+I\+\_\+stop}}
+\index{T\+W\+I\+\_\+stop@{T\+W\+I\+\_\+stop}!I2\+C.\+h@{I2\+C.\+h}}
+\subsubsection[{T\+W\+I\+\_\+stop}]{\setlength{\rightskip}{0pt plus 5cm}void T\+W\+I\+\_\+stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_i2_c_8h_a6483f679bb5397c41bb296ebd04d034c}
+Description\+: Function is used to Send stop signal \hypertarget{_i2_c_8h_a338106b37405546faad3411970cecea3}{\index{I2\+C.\+h@{I2\+C.\+h}!T\+W\+I\+\_\+write@{T\+W\+I\+\_\+write}}
+\index{T\+W\+I\+\_\+write@{T\+W\+I\+\_\+write}!I2\+C.\+h@{I2\+C.\+h}}
+\subsubsection[{T\+W\+I\+\_\+write}]{\setlength{\rightskip}{0pt plus 5cm}void T\+W\+I\+\_\+write (
+\begin{DoxyParamCaption}
+\item[{uint8}]{data}
+\end{DoxyParamCaption}
+)}}\label{_i2_c_8h_a338106b37405546faad3411970cecea3}
+Description\+: Function is used to write data or address on S\+D\+A line 

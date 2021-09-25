@@ -1,0 +1,2206 @@
+
+Door_locker_HMI_ECU.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000b94  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000186  00800060  00000b94  00000c28  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000009  008001e6  008001e6  00000dae  2**0
+                  ALLOC
+  3 .stab         000008b8  00000000  00000000  00000db0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      0000017a  00000000  00000000  00001668  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .comment      0000002f  00000000  00000000  000017e2  2**0
+                  CONTENTS, READONLY
+  6 .debug_aranges 000001c0  00000000  00000000  00001811  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_info   00001dd6  00000000  00000000  000019d1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 00000896  00000000  00000000  000037a7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line   00000c73  00000000  00000000  0000403d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_frame  000003d8  00000000  00000000  00004cb0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str    00000525  00000000  00000000  00005088  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_loc    00000e64  00000000  00000000  000055ad  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_ranges 00000150  00000000  00000000  00006411  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 7b 05 	jmp	0xaf6	; 0xaf6 <__vector_13>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	11 e0       	ldi	r17, 0x01	; 1
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e4 e9       	ldi	r30, 0x94	; 148
+  68:	fb e0       	ldi	r31, 0x0B	; 11
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a6 3e       	cpi	r26, 0xE6	; 230
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	21 e0       	ldi	r18, 0x01	; 1
+  78:	a6 ee       	ldi	r26, 0xE6	; 230
+  7a:	b1 e0       	ldi	r27, 0x01	; 1
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	af 3e       	cpi	r26, 0xEF	; 239
+  82:	b2 07       	cpc	r27, r18
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 17 01 	call	0x22e	; 0x22e <main>
+  8a:	0c 94 c8 05 	jmp	0xb90	; 0xb90 <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <LED_buzzer_init>:
+/**
+ *  Description: Function used to initialize the buzzer ,green and red LED  Pins in the microcontroller 
+ **/ 
+void LED_buzzer_init( void)
+{
+	DIO_Configuration(&RED_LED);
+  92:	80 e6       	ldi	r24, 0x60	; 96
+  94:	90 e0       	ldi	r25, 0x00	; 0
+  96:	0e 94 ab 00 	call	0x156	; 0x156 <DIO_Configuration>
+	DIO_Configuration(&GREEN_LED);
+  9a:	84 e6       	ldi	r24, 0x64	; 100
+  9c:	90 e0       	ldi	r25, 0x00	; 0
+  9e:	0e 94 ab 00 	call	0x156	; 0x156 <DIO_Configuration>
+	DIO_Configuration(&BUZZER);
+  a2:	88 e6       	ldi	r24, 0x68	; 104
+  a4:	90 e0       	ldi	r25, 0x00	; 0
+  a6:	0e 94 ab 00 	call	0x156	; 0x156 <DIO_Configuration>
+  aa:	08 95       	ret
+
+000000ac <LED_GREEN_ON>:
+/**
+ *  Description: Function used to turn on the green led 
+ **/ 
+void LED_GREEN_ON()
+{
+	GREEN_LED.value = LOGIC_HIGH;
+  ac:	81 e0       	ldi	r24, 0x01	; 1
+  ae:	80 93 67 00 	sts	0x0067, r24
+	DIO_Write_Pin(&GREEN_LED);
+  b2:	84 e6       	ldi	r24, 0x64	; 100
+  b4:	90 e0       	ldi	r25, 0x00	; 0
+  b6:	0e 94 e1 00 	call	0x1c2	; 0x1c2 <DIO_Write_Pin>
+  ba:	08 95       	ret
+
+000000bc <LED_GREEN_OFF>:
+/**
+ *  Description: Function used to turn off the green led 
+ **/ 
+void LED_GREEN_OFF()
+{
+	GREEN_LED.value = LOGIC_LOW;
+  bc:	10 92 67 00 	sts	0x0067, r1
+	DIO_Write_Pin(&GREEN_LED);
+  c0:	84 e6       	ldi	r24, 0x64	; 100
+  c2:	90 e0       	ldi	r25, 0x00	; 0
+  c4:	0e 94 e1 00 	call	0x1c2	; 0x1c2 <DIO_Write_Pin>
+  c8:	08 95       	ret
+
+000000ca <LED_RED_ON>:
+/**
+ *  Description: Function used to turn on the red led 
+ **/ 
+void LED_RED_ON()
+{
+	RED_LED.value = LOGIC_HIGH;
+  ca:	81 e0       	ldi	r24, 0x01	; 1
+  cc:	80 93 63 00 	sts	0x0063, r24
+	DIO_Write_Pin(&RED_LED);
+  d0:	80 e6       	ldi	r24, 0x60	; 96
+  d2:	90 e0       	ldi	r25, 0x00	; 0
+  d4:	0e 94 e1 00 	call	0x1c2	; 0x1c2 <DIO_Write_Pin>
+  d8:	08 95       	ret
+
+000000da <LED_RED_OFF>:
+/**
+ *  Description: Function used to turn off the red led 
+ **/ 
+void LED_RED_OFF()
+{
+	RED_LED.value = LOGIC_LOW;
+  da:	10 92 63 00 	sts	0x0063, r1
+	DIO_Write_Pin(&RED_LED);
+  de:	80 e6       	ldi	r24, 0x60	; 96
+  e0:	90 e0       	ldi	r25, 0x00	; 0
+  e2:	0e 94 e1 00 	call	0x1c2	; 0x1c2 <DIO_Write_Pin>
+  e6:	08 95       	ret
+
+000000e8 <BUZZER_BEEB>:
+/*********************************************************************************************************************************************************************/
+/**
+ *  Description: Function used to beeb the buzzer for 1 sec one time 
+ **/ 
+void BUZZER_BEEB(void)
+{
+  e8:	cf 93       	push	r28
+  ea:	df 93       	push	r29
+	BUZZER.value=LOGIC_HIGH;
+  ec:	cb e6       	ldi	r28, 0x6B	; 107
+  ee:	d0 e0       	ldi	r29, 0x00	; 0
+  f0:	81 e0       	ldi	r24, 0x01	; 1
+  f2:	88 83       	st	Y, r24
+	DIO_Write_Pin(&BUZZER);
+  f4:	88 e6       	ldi	r24, 0x68	; 104
+  f6:	90 e0       	ldi	r25, 0x00	; 0
+  f8:	0e 94 e1 00 	call	0x1c2	; 0x1c2 <DIO_Write_Pin>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  fc:	2f ef       	ldi	r18, 0xFF	; 255
+  fe:	89 e6       	ldi	r24, 0x69	; 105
+ 100:	98 e1       	ldi	r25, 0x18	; 24
+ 102:	21 50       	subi	r18, 0x01	; 1
+ 104:	80 40       	sbci	r24, 0x00	; 0
+ 106:	90 40       	sbci	r25, 0x00	; 0
+ 108:	e1 f7       	brne	.-8      	; 0x102 <BUZZER_BEEB+0x1a>
+ 10a:	00 c0       	rjmp	.+0      	; 0x10c <BUZZER_BEEB+0x24>
+ 10c:	00 00       	nop
+	_delay_ms(1000);
+	BUZZER.value=LOGIC_LOW;
+ 10e:	18 82       	st	Y, r1
+	DIO_Write_Pin(&BUZZER);
+ 110:	88 e6       	ldi	r24, 0x68	; 104
+ 112:	90 e0       	ldi	r25, 0x00	; 0
+ 114:	0e 94 e1 00 	call	0x1c2	; 0x1c2 <DIO_Write_Pin>
+}
+ 118:	df 91       	pop	r29
+ 11a:	cf 91       	pop	r28
+ 11c:	08 95       	ret
+
+0000011e <LED_RED_flash>:
+/**
+ *  Description: Function used to flash on the red led for 1 sec
+ **/ 
+void LED_RED_flash (void)
+{
+	LED_RED_ON();
+ 11e:	0e 94 65 00 	call	0xca	; 0xca <LED_RED_ON>
+ 122:	2f ef       	ldi	r18, 0xFF	; 255
+ 124:	89 e6       	ldi	r24, 0x69	; 105
+ 126:	98 e1       	ldi	r25, 0x18	; 24
+ 128:	21 50       	subi	r18, 0x01	; 1
+ 12a:	80 40       	sbci	r24, 0x00	; 0
+ 12c:	90 40       	sbci	r25, 0x00	; 0
+ 12e:	e1 f7       	brne	.-8      	; 0x128 <LED_RED_flash+0xa>
+ 130:	00 c0       	rjmp	.+0      	; 0x132 <LED_RED_flash+0x14>
+ 132:	00 00       	nop
+	_delay_ms(1000);
+	LED_RED_OFF();
+ 134:	0e 94 6d 00 	call	0xda	; 0xda <LED_RED_OFF>
+ 138:	08 95       	ret
+
+0000013a <LED_GREEN_flash>:
+/**
+ *  Description: Function used to flash on the green led for 1 sec
+ **/ 
+void LED_GREEN_flash (void)
+{
+	LED_GREEN_ON();
+ 13a:	0e 94 56 00 	call	0xac	; 0xac <LED_GREEN_ON>
+ 13e:	2f ef       	ldi	r18, 0xFF	; 255
+ 140:	89 e6       	ldi	r24, 0x69	; 105
+ 142:	98 e1       	ldi	r25, 0x18	; 24
+ 144:	21 50       	subi	r18, 0x01	; 1
+ 146:	80 40       	sbci	r24, 0x00	; 0
+ 148:	90 40       	sbci	r25, 0x00	; 0
+ 14a:	e1 f7       	brne	.-8      	; 0x144 <LED_GREEN_flash+0xa>
+ 14c:	00 c0       	rjmp	.+0      	; 0x14e <LED_GREEN_flash+0x14>
+ 14e:	00 00       	nop
+	_delay_ms(1000);
+	LED_GREEN_OFF();
+ 150:	0e 94 5e 00 	call	0xbc	; 0xbc <LED_GREEN_OFF>
+ 154:	08 95       	ret
+
+00000156 <DIO_Configuration>:
+ */
+#include "DIO.h"
+
+/******************************************************************************************************************/
+void DIO_Configuration(const DIO_Config *s_Config_Msg )
+{
+ 156:	fc 01       	movw	r30, r24
+	uint8 * DDR_Ptr;
+	/* point to the required DDR Register */
+	switch(s_Config_Msg->port)
+ 158:	80 81       	ld	r24, Z
+ 15a:	82 34       	cpi	r24, 0x42	; 66
+ 15c:	49 f0       	breq	.+18     	; 0x170 <DIO_Configuration+0x1a>
+ 15e:	18 f4       	brcc	.+6      	; 0x166 <DIO_Configuration+0x10>
+ 160:	81 34       	cpi	r24, 0x41	; 65
+ 162:	89 f4       	brne	.+34     	; 0x186 <DIO_Configuration+0x30>
+ 164:	0e c0       	rjmp	.+28     	; 0x182 <DIO_Configuration+0x2c>
+ 166:	83 34       	cpi	r24, 0x43	; 67
+ 168:	31 f0       	breq	.+12     	; 0x176 <DIO_Configuration+0x20>
+ 16a:	84 34       	cpi	r24, 0x44	; 68
+ 16c:	61 f4       	brne	.+24     	; 0x186 <DIO_Configuration+0x30>
+ 16e:	06 c0       	rjmp	.+12     	; 0x17c <DIO_Configuration+0x26>
+	{
+		case 'A': DDR_Ptr = &DDRA;
+				  break;
+		case 'B': DDR_Ptr = &DDRB;
+ 170:	a7 e3       	ldi	r26, 0x37	; 55
+ 172:	b0 e0       	ldi	r27, 0x00	; 0
+				  break;
+ 174:	08 c0       	rjmp	.+16     	; 0x186 <DIO_Configuration+0x30>
+		case 'C': DDR_Ptr = &DDRC;
+ 176:	a4 e3       	ldi	r26, 0x34	; 52
+ 178:	b0 e0       	ldi	r27, 0x00	; 0
+				  break;
+ 17a:	05 c0       	rjmp	.+10     	; 0x186 <DIO_Configuration+0x30>
+		case 'D': DDR_Ptr = &DDRD;
+ 17c:	a1 e3       	ldi	r26, 0x31	; 49
+ 17e:	b0 e0       	ldi	r27, 0x00	; 0
+				  break;		  		  		  
+ 180:	02 c0       	rjmp	.+4      	; 0x186 <DIO_Configuration+0x30>
+{
+	uint8 * DDR_Ptr;
+	/* point to the required DDR Register */
+	switch(s_Config_Msg->port)
+	{
+		case 'A': DDR_Ptr = &DDRA;
+ 182:	aa e3       	ldi	r26, 0x3A	; 58
+ 184:	b0 e0       	ldi	r27, 0x00	; 0
+		case 'C': DDR_Ptr = &DDRC;
+				  break;
+		case 'D': DDR_Ptr = &DDRD;
+				  break;		  		  		  
+	}
+	if(s_Config_Msg->direction == OUTPUT){
+ 186:	82 81       	ldd	r24, Z+2	; 0x02
+ 188:	81 30       	cpi	r24, 0x01	; 1
+ 18a:	61 f4       	brne	.+24     	; 0x1a4 <DIO_Configuration+0x4e>
+		SET_BIT(*DDR_Ptr,s_Config_Msg->pin_num); // set the corresponding bit in the DDR register to configure it as output pin
+ 18c:	81 e0       	ldi	r24, 0x01	; 1
+ 18e:	90 e0       	ldi	r25, 0x00	; 0
+ 190:	01 80       	ldd	r0, Z+1	; 0x01
+ 192:	02 c0       	rjmp	.+4      	; 0x198 <DIO_Configuration+0x42>
+ 194:	88 0f       	add	r24, r24
+ 196:	99 1f       	adc	r25, r25
+ 198:	0a 94       	dec	r0
+ 19a:	e2 f7       	brpl	.-8      	; 0x194 <DIO_Configuration+0x3e>
+ 19c:	9c 91       	ld	r25, X
+ 19e:	89 2b       	or	r24, r25
+ 1a0:	8c 93       	st	X, r24
+ 1a2:	08 95       	ret
+	}
+	else if(s_Config_Msg->direction == INPUT)	{
+ 1a4:	81 11       	cpse	r24, r1
+ 1a6:	0c c0       	rjmp	.+24     	; 0x1c0 <DIO_Configuration+0x6a>
+		CLR_BIT(*DDR_Ptr,s_Config_Msg->pin_num); // clear the corresponding bit in the DDR register to configure it as input pin
+ 1a8:	81 e0       	ldi	r24, 0x01	; 1
+ 1aa:	90 e0       	ldi	r25, 0x00	; 0
+ 1ac:	01 80       	ldd	r0, Z+1	; 0x01
+ 1ae:	02 c0       	rjmp	.+4      	; 0x1b4 <DIO_Configuration+0x5e>
+ 1b0:	88 0f       	add	r24, r24
+ 1b2:	99 1f       	adc	r25, r25
+ 1b4:	0a 94       	dec	r0
+ 1b6:	e2 f7       	brpl	.-8      	; 0x1b0 <DIO_Configuration+0x5a>
+ 1b8:	80 95       	com	r24
+ 1ba:	9c 91       	ld	r25, X
+ 1bc:	89 23       	and	r24, r25
+ 1be:	8c 93       	st	X, r24
+ 1c0:	08 95       	ret
+
+000001c2 <DIO_Write_Pin>:
+	}			
+		
+}
+/*******************************************************************************************************************/
+void DIO_Write_Pin(const DIO_Config * s_State)
+{
+ 1c2:	fc 01       	movw	r30, r24
+	uint8 * PORT_Ptr;
+	/* point to the required PORT Register */
+	switch(s_State->port)
+ 1c4:	80 81       	ld	r24, Z
+ 1c6:	82 34       	cpi	r24, 0x42	; 66
+ 1c8:	49 f0       	breq	.+18     	; 0x1dc <DIO_Write_Pin+0x1a>
+ 1ca:	18 f4       	brcc	.+6      	; 0x1d2 <DIO_Write_Pin+0x10>
+ 1cc:	81 34       	cpi	r24, 0x41	; 65
+ 1ce:	89 f4       	brne	.+34     	; 0x1f2 <DIO_Write_Pin+0x30>
+ 1d0:	0e c0       	rjmp	.+28     	; 0x1ee <DIO_Write_Pin+0x2c>
+ 1d2:	83 34       	cpi	r24, 0x43	; 67
+ 1d4:	31 f0       	breq	.+12     	; 0x1e2 <DIO_Write_Pin+0x20>
+ 1d6:	84 34       	cpi	r24, 0x44	; 68
+ 1d8:	61 f4       	brne	.+24     	; 0x1f2 <DIO_Write_Pin+0x30>
+ 1da:	06 c0       	rjmp	.+12     	; 0x1e8 <DIO_Write_Pin+0x26>
+	{
+		case 'A': PORT_Ptr = &PORTA;
+				  break;
+		case 'B': PORT_Ptr = &PORTB;
+ 1dc:	a8 e3       	ldi	r26, 0x38	; 56
+ 1de:	b0 e0       	ldi	r27, 0x00	; 0
+				  break;
+ 1e0:	08 c0       	rjmp	.+16     	; 0x1f2 <DIO_Write_Pin+0x30>
+		case 'C': PORT_Ptr = &PORTC;
+ 1e2:	a5 e3       	ldi	r26, 0x35	; 53
+ 1e4:	b0 e0       	ldi	r27, 0x00	; 0
+				  break;
+ 1e6:	05 c0       	rjmp	.+10     	; 0x1f2 <DIO_Write_Pin+0x30>
+		case 'D': PORT_Ptr = &PORTD;
+ 1e8:	a2 e3       	ldi	r26, 0x32	; 50
+ 1ea:	b0 e0       	ldi	r27, 0x00	; 0
+				  break;		  		  		  
+ 1ec:	02 c0       	rjmp	.+4      	; 0x1f2 <DIO_Write_Pin+0x30>
+{
+	uint8 * PORT_Ptr;
+	/* point to the required PORT Register */
+	switch(s_State->port)
+	{
+		case 'A': PORT_Ptr = &PORTA;
+ 1ee:	ab e3       	ldi	r26, 0x3B	; 59
+ 1f0:	b0 e0       	ldi	r27, 0x00	; 0
+		case 'C': PORT_Ptr = &PORTC;
+				  break;
+		case 'D': PORT_Ptr = &PORTD;
+				  break;		  		  		  
+	}
+	if(s_State->value == LOGIC_HIGH)
+ 1f2:	83 81       	ldd	r24, Z+3	; 0x03
+ 1f4:	81 30       	cpi	r24, 0x01	; 1
+ 1f6:	61 f4       	brne	.+24     	; 0x210 <DIO_Write_Pin+0x4e>
+	{
+		SET_BIT(*PORT_Ptr,s_State->pin_num); //set the corresponding pin in the PORT register
+ 1f8:	81 e0       	ldi	r24, 0x01	; 1
+ 1fa:	90 e0       	ldi	r25, 0x00	; 0
+ 1fc:	01 80       	ldd	r0, Z+1	; 0x01
+ 1fe:	02 c0       	rjmp	.+4      	; 0x204 <DIO_Write_Pin+0x42>
+ 200:	88 0f       	add	r24, r24
+ 202:	99 1f       	adc	r25, r25
+ 204:	0a 94       	dec	r0
+ 206:	e2 f7       	brpl	.-8      	; 0x200 <DIO_Write_Pin+0x3e>
+ 208:	9c 91       	ld	r25, X
+ 20a:	89 2b       	or	r24, r25
+ 20c:	8c 93       	st	X, r24
+ 20e:	08 95       	ret
+	}				
+    else if(s_State->value == LOGIC_LOW)
+ 210:	81 11       	cpse	r24, r1
+ 212:	0c c0       	rjmp	.+24     	; 0x22c <DIO_Write_Pin+0x6a>
+	{
+        CLR_BIT(*PORT_Ptr,s_State->pin_num); //clear the corresponding pin in the PORT register
+ 214:	81 e0       	ldi	r24, 0x01	; 1
+ 216:	90 e0       	ldi	r25, 0x00	; 0
+ 218:	01 80       	ldd	r0, Z+1	; 0x01
+ 21a:	02 c0       	rjmp	.+4      	; 0x220 <DIO_Write_Pin+0x5e>
+ 21c:	88 0f       	add	r24, r24
+ 21e:	99 1f       	adc	r25, r25
+ 220:	0a 94       	dec	r0
+ 222:	e2 f7       	brpl	.-8      	; 0x21c <DIO_Write_Pin+0x5a>
+ 224:	80 95       	com	r24
+ 226:	9c 91       	ld	r25, X
+ 228:	89 23       	and	r24, r25
+ 22a:	8c 93       	st	X, r24
+ 22c:	08 95       	ret
+
+0000022e <main>:
+
+
+int main(void)
+{
+		uint8 menu_option;
+		SYS_HMI_Init();
+ 22e:	0e 94 20 01 	call	0x240	; 0x240 <SYS_HMI_Init>
+		
+				
+		menu_option= SYS_HMI_setup_password ();
+ 232:	0e 94 c7 02 	call	0x58e	; 0x58e <SYS_HMI_setup_password>
+		
+		SYS_HMI_menu_option_send(menu_option);
+ 236:	0e 94 61 01 	call	0x2c2	; 0x2c2 <SYS_HMI_menu_option_send>
+		
+
+    while(1)
+    {
+
+		SYS_HMI_resend_menu_option ();
+ 23a:	0e 94 c8 04 	call	0x990	; 0x990 <SYS_HMI_resend_menu_option>
+ 23e:	fd cf       	rjmp	.-6      	; 0x23a <main+0xc>
+
+00000240 <SYS_HMI_Init>:
+/**
+ *  Description: Function is used to Initialize HMI system 
+ **/
+void SYS_HMI_Init (void)
+{	
+	UART_init();
+ 240:	0e 94 8d 05 	call	0xb1a	; 0xb1a <UART_init>
+	sei();
+ 244:	78 94       	sei
+	LCD_Init();
+ 246:	0e 94 59 05 	call	0xab2	; 0xab2 <LCD_Init>
+    LED_buzzer_init();
+ 24a:	0e 94 49 00 	call	0x92	; 0x92 <LED_buzzer_init>
+ 24e:	08 95       	ret
+
+00000250 <SYS_check_Password_EEPROM>:
+/**
+ *  Description: Function is used to get the status of password form CNTRL unit using UART 
+ **/
+void SYS_check_Password_EEPROM(void )
+{
+	while( UART_isreceived() == 0 )
+ 250:	0e 94 9f 05 	call	0xb3e	; 0xb3e <UART_isreceived>
+ 254:	88 23       	and	r24, r24
+ 256:	e1 f3       	breq	.-8      	; 0x250 <SYS_check_Password_EEPROM>
+	;
+	password.frist_time_flag = UART_receive_byte();
+ 258:	0e 94 9a 05 	call	0xb34	; 0xb34 <UART_receive_byte>
+ 25c:	80 93 e6 01 	sts	0x01E6, r24
+	
+	while( UART_isreceived() == 0 )
+ 260:	0e 94 9f 05 	call	0xb3e	; 0xb3e <UART_isreceived>
+ 264:	88 23       	and	r24, r24
+ 266:	e1 f3       	breq	.-8      	; 0x260 <SYS_check_Password_EEPROM+0x10>
+	;
+	password.password_correctly_enterd_flag = UART_receive_byte();
+ 268:	0e 94 9a 05 	call	0xb34	; 0xb34 <UART_receive_byte>
+ 26c:	80 93 e8 01 	sts	0x01E8, r24
+	
+	while( UART_isreceived() == 0 )
+ 270:	0e 94 9f 05 	call	0xb3e	; 0xb3e <UART_isreceived>
+ 274:	88 23       	and	r24, r24
+ 276:	e1 f3       	breq	.-8      	; 0x270 <SYS_check_Password_EEPROM+0x20>
+	;
+	password.password_saved_flag = UART_receive_byte();
+ 278:	0e 94 9a 05 	call	0xb34	; 0xb34 <UART_receive_byte>
+ 27c:	80 93 e7 01 	sts	0x01E7, r24
+	
+	while( UART_isreceived() == 0 )
+ 280:	0e 94 9f 05 	call	0xb3e	; 0xb3e <UART_isreceived>
+ 284:	88 23       	and	r24, r24
+ 286:	e1 f3       	breq	.-8      	; 0x280 <SYS_check_Password_EEPROM+0x30>
+	;
+	password.passwrd[0] = UART_receive_byte();
+ 288:	0e 94 9a 05 	call	0xb34	; 0xb34 <UART_receive_byte>
+ 28c:	80 93 e9 01 	sts	0x01E9, r24
+	
+	while( UART_isreceived() == 0 )
+ 290:	0e 94 9f 05 	call	0xb3e	; 0xb3e <UART_isreceived>
+ 294:	88 23       	and	r24, r24
+ 296:	e1 f3       	breq	.-8      	; 0x290 <SYS_check_Password_EEPROM+0x40>
+	;
+	password.passwrd[1] = UART_receive_byte();
+ 298:	0e 94 9a 05 	call	0xb34	; 0xb34 <UART_receive_byte>
+ 29c:	80 93 ea 01 	sts	0x01EA, r24
+	
+	while( UART_isreceived() == 0 )
+ 2a0:	0e 94 9f 05 	call	0xb3e	; 0xb3e <UART_isreceived>
+ 2a4:	88 23       	and	r24, r24
+ 2a6:	e1 f3       	breq	.-8      	; 0x2a0 <SYS_check_Password_EEPROM+0x50>
+	;
+	password.passwrd[2] = UART_receive_byte();
+ 2a8:	0e 94 9a 05 	call	0xb34	; 0xb34 <UART_receive_byte>
+ 2ac:	80 93 eb 01 	sts	0x01EB, r24
+	
+	while( UART_isreceived() == 0 )
+ 2b0:	0e 94 9f 05 	call	0xb3e	; 0xb3e <UART_isreceived>
+ 2b4:	88 23       	and	r24, r24
+ 2b6:	e1 f3       	breq	.-8      	; 0x2b0 <SYS_check_Password_EEPROM+0x60>
+	;
+	password.passwrd[3] = UART_receive_byte();
+ 2b8:	0e 94 9a 05 	call	0xb34	; 0xb34 <UART_receive_byte>
+ 2bc:	80 93 ec 01 	sts	0x01EC, r24
+ 2c0:	08 95       	ret
+
+000002c2 <SYS_HMI_menu_option_send>:
+/**********************************************************************************************************************************************************************/
+/**
+ *  Description: Function is used to send menu option to CNTRL unit
+ **/
+void SYS_HMI_menu_option_send (uint8 menu_option)
+{
+ 2c2:	4f 92       	push	r4
+ 2c4:	5f 92       	push	r5
+ 2c6:	6f 92       	push	r6
+ 2c8:	7f 92       	push	r7
+ 2ca:	8f 92       	push	r8
+ 2cc:	9f 92       	push	r9
+ 2ce:	af 92       	push	r10
+ 2d0:	bf 92       	push	r11
+ 2d2:	cf 92       	push	r12
+ 2d4:	df 92       	push	r13
+ 2d6:	ef 92       	push	r14
+ 2d8:	ff 92       	push	r15
+ 2da:	0f 93       	push	r16
+ 2dc:	1f 93       	push	r17
+ 2de:	cf 93       	push	r28
+ 2e0:	df 93       	push	r29
+ 2e2:	cd b7       	in	r28, 0x3d	; 61
+ 2e4:	de b7       	in	r29, 0x3e	; 62
+ 2e6:	27 97       	sbiw	r28, 0x07	; 7
+ 2e8:	0f b6       	in	r0, 0x3f	; 63
+ 2ea:	f8 94       	cli
+ 2ec:	de bf       	out	0x3e, r29	; 62
+ 2ee:	0f be       	out	0x3f, r0	; 63
+ 2f0:	cd bf       	out	0x3d, r28	; 61
+ 2f2:	18 2f       	mov	r17, r24
+	uint8 i;
+	uint8 servo_angle[3]={0};
+ 2f4:	19 82       	std	Y+1, r1	; 0x01
+ 2f6:	1a 82       	std	Y+2, r1	; 0x02
+ 2f8:	1b 82       	std	Y+3, r1	; 0x03
+	uint8 password_recheck[4]={0};
+ 2fa:	1c 82       	std	Y+4, r1	; 0x04
+ 2fc:	1d 82       	std	Y+5, r1	; 0x05
+ 2fe:	1e 82       	std	Y+6, r1	; 0x06
+ 300:	1f 82       	std	Y+7, r1	; 0x07
+	uint16 servo_angle_int;
+	/* send menu option */
+	UART_send(menu_option);
+ 302:	0e 94 96 05 	call	0xb2c	; 0xb2c <UART_send>
+	/* open the system */
+	if (menu_option == '1')
+ 306:	11 33       	cpi	r17, 0x31	; 49
+ 308:	09 f0       	breq	.+2      	; 0x30c <SYS_HMI_menu_option_send+0x4a>
+ 30a:	4d c0       	rjmp	.+154    	; 0x3a6 <SYS_HMI_menu_option_send+0xe4>
+
+/**********************************************************************************************************************************************************************/
+/**
+ *  Description: Function is used to send menu option to CNTRL unit
+ **/
+void SYS_HMI_menu_option_send (uint8 menu_option)
+ 30c:	7e 01       	movw	r14, r28
+ 30e:	24 e0       	ldi	r18, 0x04	; 4
+ 310:	e2 0e       	add	r14, r18
+ 312:	f1 1c       	adc	r15, r1
+	if (menu_option == '1')
+	{
+		/* get the servo angle from user */
+		do 
+		{		
+			LCD_clear();
+ 314:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+			LCD_display_string(" plz enter servo angle ");
+ 318:	8c e7       	ldi	r24, 0x7C	; 124
+ 31a:	90 e0       	ldi	r25, 0x00	; 0
+ 31c:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+ 320:	8e 01       	movw	r16, r28
+ 322:	0f 5f       	subi	r16, 0xFF	; 255
+ 324:	1f 4f       	sbci	r17, 0xFF	; 255
+			for(i=0;i<3;i++)
+			{
+				while(Keypad_get_pressed_key() == NO_KEY_IS_PRESSED)
+ 326:	0e 94 ee 04 	call	0x9dc	; 0x9dc <Keypad_get_pressed_key>
+ 32a:	8f 3f       	cpi	r24, 0xFF	; 255
+ 32c:	e1 f3       	breq	.-8      	; 0x326 <SYS_HMI_menu_option_send+0x64>
+				;
+				servo_angle[i]=Keypad_get_pressed_key();
+ 32e:	0e 94 ee 04 	call	0x9dc	; 0x9dc <Keypad_get_pressed_key>
+ 332:	f8 01       	movw	r30, r16
+ 334:	81 93       	st	Z+, r24
+ 336:	8f 01       	movw	r16, r30
+				LCD_display_char(servo_angle[i]);
+ 338:	0e 94 34 05 	call	0xa68	; 0xa68 <LCD_display_char>
+ 33c:	ff ef       	ldi	r31, 0xFF	; 255
+ 33e:	24 e3       	ldi	r18, 0x34	; 52
+ 340:	8c e0       	ldi	r24, 0x0C	; 12
+ 342:	f1 50       	subi	r31, 0x01	; 1
+ 344:	20 40       	sbci	r18, 0x00	; 0
+ 346:	80 40       	sbci	r24, 0x00	; 0
+ 348:	e1 f7       	brne	.-8      	; 0x342 <SYS_HMI_menu_option_send+0x80>
+ 34a:	00 c0       	rjmp	.+0      	; 0x34c <SYS_HMI_menu_option_send+0x8a>
+ 34c:	00 00       	nop
+		/* get the servo angle from user */
+		do 
+		{		
+			LCD_clear();
+			LCD_display_string(" plz enter servo angle ");
+			for(i=0;i<3;i++)
+ 34e:	0e 15       	cp	r16, r14
+ 350:	1f 05       	cpc	r17, r15
+ 352:	49 f7       	brne	.-46     	; 0x326 <SYS_HMI_menu_option_send+0x64>
+				servo_angle[i]=Keypad_get_pressed_key();
+				LCD_display_char(servo_angle[i]);
+				_delay_ms(500);
+			}
+			/* translating the servo angle into integer */
+			servo_angle_int = atoi(servo_angle);
+ 354:	ce 01       	movw	r24, r28
+ 356:	01 96       	adiw	r24, 0x01	; 1
+ 358:	0e 94 a2 05 	call	0xb44	; 0xb44 <atoi>
+			/* wrong servo input */	
+			if (servo_angle_int >= 180 )
+ 35c:	84 3b       	cpi	r24, 0xB4	; 180
+ 35e:	91 05       	cpc	r25, r1
+ 360:	80 f0       	brcs	.+32     	; 0x382 <SYS_HMI_menu_option_send+0xc0>
+			{
+				LCD_clear();
+ 362:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+				LCD_display_string(" wrong value ");
+ 366:	84 e9       	ldi	r24, 0x94	; 148
+ 368:	90 e0       	ldi	r25, 0x00	; 0
+ 36a:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+ 36e:	9f ef       	ldi	r25, 0xFF	; 255
+ 370:	e9 e6       	ldi	r30, 0x69	; 105
+ 372:	f8 e1       	ldi	r31, 0x18	; 24
+ 374:	91 50       	subi	r25, 0x01	; 1
+ 376:	e0 40       	sbci	r30, 0x00	; 0
+ 378:	f0 40       	sbci	r31, 0x00	; 0
+ 37a:	e1 f7       	brne	.-8      	; 0x374 <SYS_HMI_menu_option_send+0xb2>
+ 37c:	00 c0       	rjmp	.+0      	; 0x37e <SYS_HMI_menu_option_send+0xbc>
+ 37e:	00 00       	nop
+ 380:	c9 cf       	rjmp	.-110    	; 0x314 <SYS_HMI_menu_option_send+0x52>
+				_delay_ms(1000);
+			}
+			/* right servo input */
+			else
+			{
+				UART_send((uint8)servo_angle_int);
+ 382:	0e 94 96 05 	call	0xb2c	; 0xb2c <UART_send>
+				LCD_clear();                                                                                            
+ 386:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+				LCD_display_string(" opening the Door ");
+ 38a:	82 ea       	ldi	r24, 0xA2	; 162
+ 38c:	90 e0       	ldi	r25, 0x00	; 0
+ 38e:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+ 392:	2f ef       	ldi	r18, 0xFF	; 255
+ 394:	89 e6       	ldi	r24, 0x69	; 105
+ 396:	98 e1       	ldi	r25, 0x18	; 24
+ 398:	21 50       	subi	r18, 0x01	; 1
+ 39a:	80 40       	sbci	r24, 0x00	; 0
+ 39c:	90 40       	sbci	r25, 0x00	; 0
+ 39e:	e1 f7       	brne	.-8      	; 0x398 <SYS_HMI_menu_option_send+0xd6>
+ 3a0:	00 c0       	rjmp	.+0      	; 0x3a2 <SYS_HMI_menu_option_send+0xe0>
+ 3a2:	00 00       	nop
+ 3a4:	c3 c0       	rjmp	.+390    	; 0x52c <SYS_HMI_menu_option_send+0x26a>
+				_delay_ms(1000);
+				break;
+			}
+		} while (1);
+	}
+	else if (menu_option == '2')
+ 3a6:	12 33       	cpi	r17, 0x32	; 50
+ 3a8:	81 f4       	brne	.+32     	; 0x3ca <SYS_HMI_menu_option_send+0x108>
+	{
+		LCD_clear();
+ 3aa:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+		LCD_display_string(" closing the Door ");
+ 3ae:	85 eb       	ldi	r24, 0xB5	; 181
+ 3b0:	90 e0       	ldi	r25, 0x00	; 0
+ 3b2:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+ 3b6:	ef ef       	ldi	r30, 0xFF	; 255
+ 3b8:	f9 e6       	ldi	r31, 0x69	; 105
+ 3ba:	28 e1       	ldi	r18, 0x18	; 24
+ 3bc:	e1 50       	subi	r30, 0x01	; 1
+ 3be:	f0 40       	sbci	r31, 0x00	; 0
+ 3c0:	20 40       	sbci	r18, 0x00	; 0
+ 3c2:	e1 f7       	brne	.-8      	; 0x3bc <SYS_HMI_menu_option_send+0xfa>
+ 3c4:	00 c0       	rjmp	.+0      	; 0x3c6 <SYS_HMI_menu_option_send+0x104>
+ 3c6:	00 00       	nop
+ 3c8:	b1 c0       	rjmp	.+354    	; 0x52c <SYS_HMI_menu_option_send+0x26a>
+		_delay_ms(1000);	
+	}
+	else if(menu_option == '3')
+ 3ca:	13 33       	cpi	r17, 0x33	; 51
+ 3cc:	09 f0       	breq	.+2      	; 0x3d0 <SYS_HMI_menu_option_send+0x10e>
+ 3ce:	ad c0       	rjmp	.+346    	; 0x52a <SYS_HMI_menu_option_send+0x268>
+ 3d0:	0f 2e       	mov	r0, r31
+ 3d2:	f9 ee       	ldi	r31, 0xE9	; 233
+ 3d4:	af 2e       	mov	r10, r31
+ 3d6:	f1 e0       	ldi	r31, 0x01	; 1
+ 3d8:	bf 2e       	mov	r11, r31
+ 3da:	f0 2d       	mov	r31, r0
+
+/**********************************************************************************************************************************************************************/
+/**
+ *  Description: Function is used to send menu option to CNTRL unit
+ **/
+void SYS_HMI_menu_option_send (uint8 menu_option)
+ 3dc:	0f 2e       	mov	r0, r31
+ 3de:	fd ee       	ldi	r31, 0xED	; 237
+ 3e0:	cf 2e       	mov	r12, r31
+ 3e2:	f1 e0       	ldi	r31, 0x01	; 1
+ 3e4:	df 2e       	mov	r13, r31
+ 3e6:	f0 2d       	mov	r31, r0
+ 3e8:	68 94       	set
+ 3ea:	ee 24       	eor	r14, r14
+ 3ec:	e2 f8       	bld	r14, 2
+ 3ee:	f1 2c       	mov	r15, r1
+ 3f0:	ec 0e       	add	r14, r28
+ 3f2:	fd 1e       	adc	r15, r29
+ 3f4:	84 e0       	ldi	r24, 0x04	; 4
+ 3f6:	e8 0e       	add	r14, r24
+ 3f8:	f1 1c       	adc	r15, r1
+				password_recheck[i]=Keypad_get_pressed_key();
+				LCD_display_char(password_recheck[i]);
+				_delay_ms(500);				// for the character to appear on screen
+			}
+			/* password match */
+			if ( (password_recheck[0] == password.passwrd[0]) && (password_recheck[1] == password.passwrd[1]) && (password_recheck[2] == password.passwrd[2]) && (password_recheck[3] == password.passwrd[3]) )
+ 3fa:	0f 2e       	mov	r0, r31
+ 3fc:	fa ee       	ldi	r31, 0xEA	; 234
+ 3fe:	8f 2e       	mov	r8, r31
+ 400:	f1 e0       	ldi	r31, 0x01	; 1
+ 402:	9f 2e       	mov	r9, r31
+ 404:	f0 2d       	mov	r31, r0
+ 406:	0f 2e       	mov	r0, r31
+ 408:	fb ee       	ldi	r31, 0xEB	; 235
+ 40a:	4f 2e       	mov	r4, r31
+ 40c:	f1 e0       	ldi	r31, 0x01	; 1
+ 40e:	5f 2e       	mov	r5, r31
+ 410:	f0 2d       	mov	r31, r0
+ 412:	0f 2e       	mov	r0, r31
+ 414:	fc ee       	ldi	r31, 0xEC	; 236
+ 416:	6f 2e       	mov	r6, r31
+ 418:	f1 e0       	ldi	r31, 0x01	; 1
+ 41a:	7f 2e       	mov	r7, r31
+ 41c:	f0 2d       	mov	r31, r0
+	else if(menu_option == '3')
+	{
+		do 
+		{
+			/* getting password from user  */
+			LCD_clear();
+ 41e:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+			LCD_display_string(" Plz enter Passwrd ");
+ 422:	88 ec       	ldi	r24, 0xC8	; 200
+ 424:	90 e0       	ldi	r25, 0x00	; 0
+ 426:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+			LCD_move_3rdline();
+ 42a:	0e 94 73 05 	call	0xae6	; 0xae6 <LCD_move_3rdline>
+ 42e:	85 01       	movw	r16, r10
+			for(i=0;i<4;i++)
+			{
+				while(Keypad_get_pressed_key() == NO_KEY_IS_PRESSED)
+ 430:	0e 94 ee 04 	call	0x9dc	; 0x9dc <Keypad_get_pressed_key>
+ 434:	8f 3f       	cpi	r24, 0xFF	; 255
+ 436:	e1 f3       	breq	.-8      	; 0x430 <SYS_HMI_menu_option_send+0x16e>
+				;
+				password.passwrd[i]=Keypad_get_pressed_key();
+ 438:	0e 94 ee 04 	call	0x9dc	; 0x9dc <Keypad_get_pressed_key>
+ 43c:	f8 01       	movw	r30, r16
+ 43e:	81 93       	st	Z+, r24
+ 440:	8f 01       	movw	r16, r30
+				LCD_display_char(password.passwrd[i]);
+ 442:	0e 94 34 05 	call	0xa68	; 0xa68 <LCD_display_char>
+ 446:	ff ef       	ldi	r31, 0xFF	; 255
+ 448:	24 e3       	ldi	r18, 0x34	; 52
+ 44a:	8c e0       	ldi	r24, 0x0C	; 12
+ 44c:	f1 50       	subi	r31, 0x01	; 1
+ 44e:	20 40       	sbci	r18, 0x00	; 0
+ 450:	80 40       	sbci	r24, 0x00	; 0
+ 452:	e1 f7       	brne	.-8      	; 0x44c <SYS_HMI_menu_option_send+0x18a>
+ 454:	00 c0       	rjmp	.+0      	; 0x456 <SYS_HMI_menu_option_send+0x194>
+ 456:	00 00       	nop
+		{
+			/* getting password from user  */
+			LCD_clear();
+			LCD_display_string(" Plz enter Passwrd ");
+			LCD_move_3rdline();
+			for(i=0;i<4;i++)
+ 458:	0c 15       	cp	r16, r12
+ 45a:	1d 05       	cpc	r17, r13
+ 45c:	49 f7       	brne	.-46     	; 0x430 <SYS_HMI_menu_option_send+0x16e>
+				password.passwrd[i]=Keypad_get_pressed_key();
+				LCD_display_char(password.passwrd[i]);
+				_delay_ms(500);				// delay for the LCD to appear on the screen
+			}
+			/* getting password confirmation */
+			LCD_clear();
+ 45e:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+			LCD_display_string(" plz reenter passwrd");
+ 462:	8c ed       	ldi	r24, 0xDC	; 220
+ 464:	90 e0       	ldi	r25, 0x00	; 0
+ 466:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+			LCD_move_3rdline();
+ 46a:	0e 94 73 05 	call	0xae6	; 0xae6 <LCD_move_3rdline>
+ 46e:	8e 01       	movw	r16, r28
+ 470:	0c 5f       	subi	r16, 0xFC	; 252
+ 472:	1f 4f       	sbci	r17, 0xFF	; 255
+			for(i=0;i<4;i++)
+			{
+				while(Keypad_get_pressed_key() == NO_KEY_IS_PRESSED)
+ 474:	0e 94 ee 04 	call	0x9dc	; 0x9dc <Keypad_get_pressed_key>
+ 478:	8f 3f       	cpi	r24, 0xFF	; 255
+ 47a:	e1 f3       	breq	.-8      	; 0x474 <SYS_HMI_menu_option_send+0x1b2>
+				;
+				password_recheck[i]=Keypad_get_pressed_key();
+ 47c:	0e 94 ee 04 	call	0x9dc	; 0x9dc <Keypad_get_pressed_key>
+ 480:	f8 01       	movw	r30, r16
+ 482:	81 93       	st	Z+, r24
+ 484:	8f 01       	movw	r16, r30
+				LCD_display_char(password_recheck[i]);
+ 486:	0e 94 34 05 	call	0xa68	; 0xa68 <LCD_display_char>
+ 48a:	ff ef       	ldi	r31, 0xFF	; 255
+ 48c:	24 e3       	ldi	r18, 0x34	; 52
+ 48e:	8c e0       	ldi	r24, 0x0C	; 12
+ 490:	f1 50       	subi	r31, 0x01	; 1
+ 492:	20 40       	sbci	r18, 0x00	; 0
+ 494:	80 40       	sbci	r24, 0x00	; 0
+ 496:	e1 f7       	brne	.-8      	; 0x490 <SYS_HMI_menu_option_send+0x1ce>
+ 498:	00 c0       	rjmp	.+0      	; 0x49a <SYS_HMI_menu_option_send+0x1d8>
+ 49a:	00 00       	nop
+			}
+			/* getting password confirmation */
+			LCD_clear();
+			LCD_display_string(" plz reenter passwrd");
+			LCD_move_3rdline();
+			for(i=0;i<4;i++)
+ 49c:	0e 15       	cp	r16, r14
+ 49e:	1f 05       	cpc	r17, r15
+ 4a0:	49 f7       	brne	.-46     	; 0x474 <SYS_HMI_menu_option_send+0x1b2>
+				password_recheck[i]=Keypad_get_pressed_key();
+				LCD_display_char(password_recheck[i]);
+				_delay_ms(500);				// for the character to appear on screen
+			}
+			/* password match */
+			if ( (password_recheck[0] == password.passwrd[0]) && (password_recheck[1] == password.passwrd[1]) && (password_recheck[2] == password.passwrd[2]) && (password_recheck[3] == password.passwrd[3]) )
+ 4a2:	8c 81       	ldd	r24, Y+4	; 0x04
+ 4a4:	f5 01       	movw	r30, r10
+ 4a6:	90 81       	ld	r25, Z
+ 4a8:	89 13       	cpse	r24, r25
+ 4aa:	2d c0       	rjmp	.+90     	; 0x506 <SYS_HMI_menu_option_send+0x244>
+ 4ac:	2d 81       	ldd	r18, Y+5	; 0x05
+ 4ae:	f4 01       	movw	r30, r8
+ 4b0:	90 81       	ld	r25, Z
+ 4b2:	29 13       	cpse	r18, r25
+ 4b4:	28 c0       	rjmp	.+80     	; 0x506 <SYS_HMI_menu_option_send+0x244>
+ 4b6:	2e 81       	ldd	r18, Y+6	; 0x06
+ 4b8:	f2 01       	movw	r30, r4
+ 4ba:	90 81       	ld	r25, Z
+ 4bc:	29 13       	cpse	r18, r25
+ 4be:	23 c0       	rjmp	.+70     	; 0x506 <SYS_HMI_menu_option_send+0x244>
+ 4c0:	2f 81       	ldd	r18, Y+7	; 0x07
+ 4c2:	f3 01       	movw	r30, r6
+ 4c4:	90 81       	ld	r25, Z
+ 4c6:	29 13       	cpse	r18, r25
+ 4c8:	1e c0       	rjmp	.+60     	; 0x506 <SYS_HMI_menu_option_send+0x244>
+			{
+				UART_send(password.passwrd[0]);
+ 4ca:	0e 94 96 05 	call	0xb2c	; 0xb2c <UART_send>
+				UART_send(password.passwrd[1]);
+ 4ce:	80 91 ea 01 	lds	r24, 0x01EA
+ 4d2:	0e 94 96 05 	call	0xb2c	; 0xb2c <UART_send>
+				UART_send(password.passwrd[2]);
+ 4d6:	80 91 eb 01 	lds	r24, 0x01EB
+ 4da:	0e 94 96 05 	call	0xb2c	; 0xb2c <UART_send>
+				UART_send(password.passwrd[3]);
+ 4de:	80 91 ec 01 	lds	r24, 0x01EC
+ 4e2:	0e 94 96 05 	call	0xb2c	; 0xb2c <UART_send>
+					
+				LCD_clear();
+ 4e6:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+				LCD_display_string(" password changed ");
+ 4ea:	81 ef       	ldi	r24, 0xF1	; 241
+ 4ec:	90 e0       	ldi	r25, 0x00	; 0
+ 4ee:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+ 4f2:	ff ef       	ldi	r31, 0xFF	; 255
+ 4f4:	29 e6       	ldi	r18, 0x69	; 105
+ 4f6:	88 e1       	ldi	r24, 0x18	; 24
+ 4f8:	f1 50       	subi	r31, 0x01	; 1
+ 4fa:	20 40       	sbci	r18, 0x00	; 0
+ 4fc:	80 40       	sbci	r24, 0x00	; 0
+ 4fe:	e1 f7       	brne	.-8      	; 0x4f8 <SYS_HMI_menu_option_send+0x236>
+ 500:	00 c0       	rjmp	.+0      	; 0x502 <SYS_HMI_menu_option_send+0x240>
+ 502:	00 00       	nop
+ 504:	13 c0       	rjmp	.+38     	; 0x52c <SYS_HMI_menu_option_send+0x26a>
+				break;
+			}
+			/* password mismatch with previously entered password */
+			else
+			{
+				LCD_clear();
+ 506:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+				LCD_display_string(" password mismatch ");
+ 50a:	84 e0       	ldi	r24, 0x04	; 4
+ 50c:	91 e0       	ldi	r25, 0x01	; 1
+ 50e:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+ 512:	9f ef       	ldi	r25, 0xFF	; 255
+ 514:	e9 e6       	ldi	r30, 0x69	; 105
+ 516:	f8 e1       	ldi	r31, 0x18	; 24
+ 518:	91 50       	subi	r25, 0x01	; 1
+ 51a:	e0 40       	sbci	r30, 0x00	; 0
+ 51c:	f0 40       	sbci	r31, 0x00	; 0
+ 51e:	e1 f7       	brne	.-8      	; 0x518 <SYS_HMI_menu_option_send+0x256>
+ 520:	00 c0       	rjmp	.+0      	; 0x522 <SYS_HMI_menu_option_send+0x260>
+ 522:	00 00       	nop
+				_delay_ms(1000);		// wait on screen for one sec
+				LCD_clear();
+ 524:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+			}
+		} while (1);
+ 528:	7a cf       	rjmp	.-268    	; 0x41e <SYS_HMI_menu_option_send+0x15c>
+ 52a:	ff cf       	rjmp	.-2      	; 0x52a <SYS_HMI_menu_option_send+0x268>
+	else
+	{
+		while(1)
+		;
+	}
+}
+ 52c:	27 96       	adiw	r28, 0x07	; 7
+ 52e:	0f b6       	in	r0, 0x3f	; 63
+ 530:	f8 94       	cli
+ 532:	de bf       	out	0x3e, r29	; 62
+ 534:	0f be       	out	0x3f, r0	; 63
+ 536:	cd bf       	out	0x3d, r28	; 61
+ 538:	df 91       	pop	r29
+ 53a:	cf 91       	pop	r28
+ 53c:	1f 91       	pop	r17
+ 53e:	0f 91       	pop	r16
+ 540:	ff 90       	pop	r15
+ 542:	ef 90       	pop	r14
+ 544:	df 90       	pop	r13
+ 546:	cf 90       	pop	r12
+ 548:	bf 90       	pop	r11
+ 54a:	af 90       	pop	r10
+ 54c:	9f 90       	pop	r9
+ 54e:	8f 90       	pop	r8
+ 550:	7f 90       	pop	r7
+ 552:	6f 90       	pop	r6
+ 554:	5f 90       	pop	r5
+ 556:	4f 90       	pop	r4
+ 558:	08 95       	ret
+
+0000055a <SYS_HMI_get_menu_option>:
+/*************************************************************************************************************************************************************************/
+/**
+ *  Description: Function is used to get menu option from user
+ **/
+uint8 SYS_HMI_get_menu_option (void)
+{
+ 55a:	cf 93       	push	r28
+	uint8 menu_option;
+		do
+		{
+			while(Keypad_get_pressed_key() == NO_KEY_IS_PRESSED)
+ 55c:	0e 94 ee 04 	call	0x9dc	; 0x9dc <Keypad_get_pressed_key>
+ 560:	8f 3f       	cpi	r24, 0xFF	; 255
+ 562:	e1 f3       	breq	.-8      	; 0x55c <SYS_HMI_get_menu_option+0x2>
+			;
+			menu_option=Keypad_get_pressed_key();
+ 564:	0e 94 ee 04 	call	0x9dc	; 0x9dc <Keypad_get_pressed_key>
+ 568:	c8 2f       	mov	r28, r24
+			if (( menu_option == '1') || ( menu_option == '2' ) || (menu_option =='3') )
+ 56a:	81 53       	subi	r24, 0x31	; 49
+ 56c:	83 30       	cpi	r24, 0x03	; 3
+ 56e:	b0 f7       	brcc	.-20     	; 0x55c <SYS_HMI_get_menu_option+0x2>
+			{
+				LCD_display_char(menu_option);
+ 570:	8c 2f       	mov	r24, r28
+ 572:	0e 94 34 05 	call	0xa68	; 0xa68 <LCD_display_char>
+ 576:	2f ef       	ldi	r18, 0xFF	; 255
+ 578:	84 e3       	ldi	r24, 0x34	; 52
+ 57a:	9c e0       	ldi	r25, 0x0C	; 12
+ 57c:	21 50       	subi	r18, 0x01	; 1
+ 57e:	80 40       	sbci	r24, 0x00	; 0
+ 580:	90 40       	sbci	r25, 0x00	; 0
+ 582:	e1 f7       	brne	.-8      	; 0x57c <SYS_HMI_get_menu_option+0x22>
+ 584:	00 c0       	rjmp	.+0      	; 0x586 <SYS_HMI_get_menu_option+0x2c>
+ 586:	00 00       	nop
+				_delay_ms(500);
+				break;
+			}
+		} while (1);
+		return menu_option;
+}
+ 588:	8c 2f       	mov	r24, r28
+ 58a:	cf 91       	pop	r28
+ 58c:	08 95       	ret
+
+0000058e <SYS_HMI_setup_password>:
+/********************************************************************************************/
+/**
+ *  Description: Function is used to Initialize HMI system and setup password if not set and return the value of menu option
+ **/
+uint8 SYS_HMI_setup_password (void)
+{
+ 58e:	2f 92       	push	r2
+ 590:	3f 92       	push	r3
+ 592:	4f 92       	push	r4
+ 594:	5f 92       	push	r5
+ 596:	6f 92       	push	r6
+ 598:	7f 92       	push	r7
+ 59a:	8f 92       	push	r8
+ 59c:	9f 92       	push	r9
+ 59e:	af 92       	push	r10
+ 5a0:	bf 92       	push	r11
+ 5a2:	cf 92       	push	r12
+ 5a4:	df 92       	push	r13
+ 5a6:	ef 92       	push	r14
+ 5a8:	ff 92       	push	r15
+ 5aa:	0f 93       	push	r16
+ 5ac:	1f 93       	push	r17
+ 5ae:	cf 93       	push	r28
+ 5b0:	df 93       	push	r29
+ 5b2:	00 d0       	rcall	.+0      	; 0x5b4 <SYS_HMI_setup_password+0x26>
+ 5b4:	00 d0       	rcall	.+0      	; 0x5b6 <SYS_HMI_setup_password+0x28>
+ 5b6:	cd b7       	in	r28, 0x3d	; 61
+ 5b8:	de b7       	in	r29, 0x3e	; 62
+	uint8 i,Mismatch_counter=1;
+	uint8 menu_option;
+	uint8 tmp;
+	uint8 password_recheck[]={0xff,0xff,0xff,0xff};
+ 5ba:	8f ef       	ldi	r24, 0xFF	; 255
+ 5bc:	89 83       	std	Y+1, r24	; 0x01
+ 5be:	8a 83       	std	Y+2, r24	; 0x02
+ 5c0:	8b 83       	std	Y+3, r24	; 0x03
+ 5c2:	8c 83       	std	Y+4, r24	; 0x04
+		
+		
+	/* get the password status and the password */
+
+	SYS_check_Password_EEPROM();
+ 5c4:	0e 94 28 01 	call	0x250	; 0x250 <SYS_check_Password_EEPROM>
+	
+	
+	if(password.frist_time_flag == 0 )
+ 5c8:	80 91 e6 01 	lds	r24, 0x01E6
+ 5cc:	88 23       	and	r24, r24
+ 5ce:	49 f1       	breq	.+82     	; 0x622 <SYS_HMI_setup_password+0x94>
+ 5d0:	0f 2e       	mov	r0, r31
+ 5d2:	f3 e0       	ldi	r31, 0x03	; 3
+ 5d4:	3f 2e       	mov	r3, r31
+ 5d6:	f0 2d       	mov	r31, r0
+ 5d8:	0f 2e       	mov	r0, r31
+ 5da:	f9 ee       	ldi	r31, 0xE9	; 233
+ 5dc:	ef 2e       	mov	r14, r31
+ 5de:	f1 e0       	ldi	r31, 0x01	; 1
+ 5e0:	ff 2e       	mov	r15, r31
+ 5e2:	f0 2d       	mov	r31, r0
+}
+/********************************************************************************************/
+/**
+ *  Description: Function is used to Initialize HMI system and setup password if not set and return the value of menu option
+ **/
+uint8 SYS_HMI_setup_password (void)
+ 5e4:	0f 2e       	mov	r0, r31
+ 5e6:	fd ee       	ldi	r31, 0xED	; 237
+ 5e8:	8f 2e       	mov	r8, r31
+ 5ea:	f1 e0       	ldi	r31, 0x01	; 1
+ 5ec:	9f 2e       	mov	r9, r31
+ 5ee:	f0 2d       	mov	r31, r0
+				_delay_ms(500);				// delay for the LCD to appear on the screen
+			}
+		
+			/* sending password for checking */
+			UART_send(password.passwrd[0]);
+			UART_send(password.passwrd[1]);
+ 5f0:	0f 2e       	mov	r0, r31
+ 5f2:	fa ee       	ldi	r31, 0xEA	; 234
+ 5f4:	af 2e       	mov	r10, r31
+ 5f6:	f1 e0       	ldi	r31, 0x01	; 1
+ 5f8:	bf 2e       	mov	r11, r31
+ 5fa:	f0 2d       	mov	r31, r0
+			UART_send(password.passwrd[2]);
+ 5fc:	0f 2e       	mov	r0, r31
+ 5fe:	fb ee       	ldi	r31, 0xEB	; 235
+ 600:	cf 2e       	mov	r12, r31
+ 602:	f1 e0       	ldi	r31, 0x01	; 1
+ 604:	df 2e       	mov	r13, r31
+ 606:	f0 2d       	mov	r31, r0
+			UART_send(password.passwrd[3]);
+ 608:	0f 2e       	mov	r0, r31
+ 60a:	fc ee       	ldi	r31, 0xEC	; 236
+ 60c:	6f 2e       	mov	r6, r31
+ 60e:	f1 e0       	ldi	r31, 0x01	; 1
+ 610:	7f 2e       	mov	r7, r31
+ 612:	f0 2d       	mov	r31, r0
+			
+
+			/* getting confirmation on sent password */	
+			while( UART_isreceived() == 0 )
+			;
+			password.password_correctly_enterd_flag = UART_receive_byte();
+ 614:	0f 2e       	mov	r0, r31
+ 616:	f8 ee       	ldi	r31, 0xE8	; 232
+ 618:	4f 2e       	mov	r4, r31
+ 61a:	f1 e0       	ldi	r31, 0x01	; 1
+ 61c:	5f 2e       	mov	r5, r31
+ 61e:	f0 2d       	mov	r31, r0
+ 620:	10 c1       	rjmp	.+544    	; 0x842 <SYS_HMI_setup_password+0x2b4>
+ 622:	0f 2e       	mov	r0, r31
+ 624:	f9 ee       	ldi	r31, 0xE9	; 233
+ 626:	af 2e       	mov	r10, r31
+ 628:	f1 e0       	ldi	r31, 0x01	; 1
+ 62a:	bf 2e       	mov	r11, r31
+ 62c:	f0 2d       	mov	r31, r0
+}
+/********************************************************************************************/
+/**
+ *  Description: Function is used to Initialize HMI system and setup password if not set and return the value of menu option
+ **/
+uint8 SYS_HMI_setup_password (void)
+ 62e:	0f 2e       	mov	r0, r31
+ 630:	fd ee       	ldi	r31, 0xED	; 237
+ 632:	cf 2e       	mov	r12, r31
+ 634:	f1 e0       	ldi	r31, 0x01	; 1
+ 636:	df 2e       	mov	r13, r31
+ 638:	f0 2d       	mov	r31, r0
+				LCD_clear();
+				LCD_display_string(" passwrd cleared ");
+				_delay_ms(1000);				// wait on screen for one sec
+				LCD_clear();		
+				for(i=0;i<4;i++)
+				password.passwrd[i]=0;
+ 63a:	0f 2e       	mov	r0, r31
+ 63c:	fa ee       	ldi	r31, 0xEA	; 234
+ 63e:	6f 2e       	mov	r6, r31
+ 640:	f1 e0       	ldi	r31, 0x01	; 1
+ 642:	7f 2e       	mov	r7, r31
+ 644:	f0 2d       	mov	r31, r0
+ 646:	0f 2e       	mov	r0, r31
+ 648:	fb ee       	ldi	r31, 0xEB	; 235
+ 64a:	4f 2e       	mov	r4, r31
+ 64c:	f1 e0       	ldi	r31, 0x01	; 1
+ 64e:	5f 2e       	mov	r5, r31
+ 650:	f0 2d       	mov	r31, r0
+ 652:	0f 2e       	mov	r0, r31
+ 654:	fc ee       	ldi	r31, 0xEC	; 236
+ 656:	2f 2e       	mov	r2, r31
+ 658:	f1 e0       	ldi	r31, 0x01	; 1
+ 65a:	3f 2e       	mov	r3, r31
+ 65c:	f0 2d       	mov	r31, r0
+}
+/********************************************************************************************/
+/**
+ *  Description: Function is used to Initialize HMI system and setup password if not set and return the value of menu option
+ **/
+uint8 SYS_HMI_setup_password (void)
+ 65e:	4e 01       	movw	r8, r28
+ 660:	25 e0       	ldi	r18, 0x05	; 5
+ 662:	82 0e       	add	r8, r18
+ 664:	91 1c       	adc	r9, r1
+	if(password.frist_time_flag == 0 )
+	{
+		/* password entering and ensuring the user know the password he just entered by reentering it  */
+		do 
+		{
+l1:			LCD_display_string(" Plz Setup Passwrd ");
+ 666:	88 e1       	ldi	r24, 0x18	; 24
+ 668:	91 e0       	ldi	r25, 0x01	; 1
+ 66a:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+			LCD_move_3rdline();
+ 66e:	0e 94 73 05 	call	0xae6	; 0xae6 <LCD_move_3rdline>
+ 672:	85 01       	movw	r16, r10
+			/* getting password from user  */
+			for(i=0;i<4;i++)
+			{
+				while(Keypad_get_pressed_key() == NO_KEY_IS_PRESSED)
+ 674:	0e 94 ee 04 	call	0x9dc	; 0x9dc <Keypad_get_pressed_key>
+ 678:	8f 3f       	cpi	r24, 0xFF	; 255
+ 67a:	e1 f3       	breq	.-8      	; 0x674 <SYS_HMI_setup_password+0xe6>
+				;
+				password.passwrd[i]=Keypad_get_pressed_key();
+ 67c:	0e 94 ee 04 	call	0x9dc	; 0x9dc <Keypad_get_pressed_key>
+}
+/********************************************************************************************/
+/**
+ *  Description: Function is used to Initialize HMI system and setup password if not set and return the value of menu option
+ **/
+uint8 SYS_HMI_setup_password (void)
+ 680:	78 01       	movw	r14, r16
+			/* getting password from user  */
+			for(i=0;i<4;i++)
+			{
+				while(Keypad_get_pressed_key() == NO_KEY_IS_PRESSED)
+				;
+				password.passwrd[i]=Keypad_get_pressed_key();
+ 682:	f8 01       	movw	r30, r16
+ 684:	81 93       	st	Z+, r24
+ 686:	8f 01       	movw	r16, r30
+				LCD_display_char(password.passwrd[i]);
+ 688:	0e 94 34 05 	call	0xa68	; 0xa68 <LCD_display_char>
+ 68c:	ff ef       	ldi	r31, 0xFF	; 255
+ 68e:	24 e3       	ldi	r18, 0x34	; 52
+ 690:	8c e0       	ldi	r24, 0x0C	; 12
+ 692:	f1 50       	subi	r31, 0x01	; 1
+ 694:	20 40       	sbci	r18, 0x00	; 0
+ 696:	80 40       	sbci	r24, 0x00	; 0
+ 698:	e1 f7       	brne	.-8      	; 0x692 <SYS_HMI_setup_password+0x104>
+ 69a:	00 c0       	rjmp	.+0      	; 0x69c <SYS_HMI_setup_password+0x10e>
+ 69c:	00 00       	nop
+				_delay_ms(500);					// delay for the LCD to appear on the screen 
+				 if(password.passwrd[i] == 'c')
+ 69e:	f7 01       	movw	r30, r14
+ 6a0:	80 81       	ld	r24, Z
+ 6a2:	83 36       	cpi	r24, 0x63	; 99
+ 6a4:	d1 f4       	brne	.+52     	; 0x6da <SYS_HMI_setup_password+0x14c>
+				{
+					LCD_clear();
+ 6a6:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+					LCD_display_string(" passwrd cleared ");
+ 6aa:	8c e2       	ldi	r24, 0x2C	; 44
+ 6ac:	91 e0       	ldi	r25, 0x01	; 1
+ 6ae:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+ 6b2:	ff ef       	ldi	r31, 0xFF	; 255
+ 6b4:	29 e6       	ldi	r18, 0x69	; 105
+ 6b6:	88 e1       	ldi	r24, 0x18	; 24
+ 6b8:	f1 50       	subi	r31, 0x01	; 1
+ 6ba:	20 40       	sbci	r18, 0x00	; 0
+ 6bc:	80 40       	sbci	r24, 0x00	; 0
+ 6be:	e1 f7       	brne	.-8      	; 0x6b8 <SYS_HMI_setup_password+0x12a>
+ 6c0:	00 c0       	rjmp	.+0      	; 0x6c2 <SYS_HMI_setup_password+0x134>
+ 6c2:	00 00       	nop
+					_delay_ms(1000);				// wait on screen for one sec
+					LCD_clear();
+ 6c4:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+					for(i=0;i<4;i++)
+					password.passwrd[i]=0;
+ 6c8:	f5 01       	movw	r30, r10
+ 6ca:	10 82       	st	Z, r1
+ 6cc:	f3 01       	movw	r30, r6
+ 6ce:	10 82       	st	Z, r1
+ 6d0:	f2 01       	movw	r30, r4
+ 6d2:	10 82       	st	Z, r1
+ 6d4:	f1 01       	movw	r30, r2
+ 6d6:	10 82       	st	Z, r1
+ 6d8:	c6 cf       	rjmp	.-116    	; 0x666 <SYS_HMI_setup_password+0xd8>
+		do 
+		{
+l1:			LCD_display_string(" Plz Setup Passwrd ");
+			LCD_move_3rdline();
+			/* getting password from user  */
+			for(i=0;i<4;i++)
+ 6da:	0c 15       	cp	r16, r12
+ 6dc:	1d 05       	cpc	r17, r13
+ 6de:	51 f6       	brne	.-108    	; 0x674 <SYS_HMI_setup_password+0xe6>
+					
+				}
+								
+			}
+			/* followed by '=' or 'c' or other characters*/
+			while( (Keypad_get_pressed_key() == NO_KEY_IS_PRESSED ) )
+ 6e0:	0e 94 ee 04 	call	0x9dc	; 0x9dc <Keypad_get_pressed_key>
+ 6e4:	8f 3f       	cpi	r24, 0xFF	; 255
+ 6e6:	e1 f3       	breq	.-8      	; 0x6e0 <SYS_HMI_setup_password+0x152>
+			;
+			tmp=Keypad_get_pressed_key();
+ 6e8:	0e 94 ee 04 	call	0x9dc	; 0x9dc <Keypad_get_pressed_key>
+			
+			/* followed by '=' */
+			if (tmp == '=')
+ 6ec:	8d 33       	cpi	r24, 0x3D	; 61
+ 6ee:	09 f0       	breq	.+2      	; 0x6f2 <SYS_HMI_setup_password+0x164>
+ 6f0:	89 c0       	rjmp	.+274    	; 0x804 <SYS_HMI_setup_password+0x276>
+			{
+				LCD_display_char('=');
+ 6f2:	0e 94 34 05 	call	0xa68	; 0xa68 <LCD_display_char>
+ 6f6:	ff ef       	ldi	r31, 0xFF	; 255
+ 6f8:	29 e6       	ldi	r18, 0x69	; 105
+ 6fa:	88 e1       	ldi	r24, 0x18	; 24
+ 6fc:	f1 50       	subi	r31, 0x01	; 1
+ 6fe:	20 40       	sbci	r18, 0x00	; 0
+ 700:	80 40       	sbci	r24, 0x00	; 0
+ 702:	e1 f7       	brne	.-8      	; 0x6fc <SYS_HMI_setup_password+0x16e>
+ 704:	00 c0       	rjmp	.+0      	; 0x706 <SYS_HMI_setup_password+0x178>
+ 706:	00 00       	nop
+				_delay_ms(1000);
+				LCD_clear();
+ 708:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+l2:				LCD_display_string(" Plz reenter passwrd ");
+ 70c:	8e e3       	ldi	r24, 0x3E	; 62
+ 70e:	91 e0       	ldi	r25, 0x01	; 1
+ 710:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+				LCD_move_3rdline();
+ 714:	0e 94 73 05 	call	0xae6	; 0xae6 <LCD_move_3rdline>
+ 718:	8e 01       	movw	r16, r28
+ 71a:	0f 5f       	subi	r16, 0xFF	; 255
+ 71c:	1f 4f       	sbci	r17, 0xFF	; 255
+				/* user enter the password again */
+				for(i=0;i<4;i++)
+				{
+					while(Keypad_get_pressed_key() == NO_KEY_IS_PRESSED)
+ 71e:	0e 94 ee 04 	call	0x9dc	; 0x9dc <Keypad_get_pressed_key>
+ 722:	8f 3f       	cpi	r24, 0xFF	; 255
+ 724:	e1 f3       	breq	.-8      	; 0x71e <SYS_HMI_setup_password+0x190>
+					;
+					password_recheck[i]=Keypad_get_pressed_key();
+ 726:	0e 94 ee 04 	call	0x9dc	; 0x9dc <Keypad_get_pressed_key>
+ 72a:	f8 2e       	mov	r15, r24
+ 72c:	f8 01       	movw	r30, r16
+ 72e:	81 93       	st	Z+, r24
+ 730:	8f 01       	movw	r16, r30
+					LCD_display_char(password_recheck[i]);
+ 732:	0e 94 34 05 	call	0xa68	; 0xa68 <LCD_display_char>
+ 736:	ff ef       	ldi	r31, 0xFF	; 255
+ 738:	24 e3       	ldi	r18, 0x34	; 52
+ 73a:	8c e0       	ldi	r24, 0x0C	; 12
+ 73c:	f1 50       	subi	r31, 0x01	; 1
+ 73e:	20 40       	sbci	r18, 0x00	; 0
+ 740:	80 40       	sbci	r24, 0x00	; 0
+ 742:	e1 f7       	brne	.-8      	; 0x73c <SYS_HMI_setup_password+0x1ae>
+ 744:	00 c0       	rjmp	.+0      	; 0x746 <SYS_HMI_setup_password+0x1b8>
+ 746:	00 00       	nop
+					_delay_ms(500);				// for the character to appear on screen
+					 if(password_recheck[i] == 'c')
+ 748:	93 e6       	ldi	r25, 0x63	; 99
+ 74a:	f9 12       	cpse	r15, r25
+ 74c:	16 c0       	rjmp	.+44     	; 0x77a <SYS_HMI_setup_password+0x1ec>
+					 {
+						 LCD_clear();
+ 74e:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+						 LCD_display_string(" passwrd cleared ");
+ 752:	8c e2       	ldi	r24, 0x2C	; 44
+ 754:	91 e0       	ldi	r25, 0x01	; 1
+ 756:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+ 75a:	ef ef       	ldi	r30, 0xFF	; 255
+ 75c:	f9 e6       	ldi	r31, 0x69	; 105
+ 75e:	28 e1       	ldi	r18, 0x18	; 24
+ 760:	e1 50       	subi	r30, 0x01	; 1
+ 762:	f0 40       	sbci	r31, 0x00	; 0
+ 764:	20 40       	sbci	r18, 0x00	; 0
+ 766:	e1 f7       	brne	.-8      	; 0x760 <SYS_HMI_setup_password+0x1d2>
+ 768:	00 c0       	rjmp	.+0      	; 0x76a <SYS_HMI_setup_password+0x1dc>
+ 76a:	00 00       	nop
+						 _delay_ms(1000);				// wait on screen for one sec
+						 LCD_clear();
+ 76c:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+						 for(i=0;i<4;i++)
+						 password_recheck[i]=0;
+ 770:	19 82       	std	Y+1, r1	; 0x01
+ 772:	1a 82       	std	Y+2, r1	; 0x02
+ 774:	1b 82       	std	Y+3, r1	; 0x03
+ 776:	1c 82       	std	Y+4, r1	; 0x04
+ 778:	c9 cf       	rjmp	.-110    	; 0x70c <SYS_HMI_setup_password+0x17e>
+				_delay_ms(1000);
+				LCD_clear();
+l2:				LCD_display_string(" Plz reenter passwrd ");
+				LCD_move_3rdline();
+				/* user enter the password again */
+				for(i=0;i<4;i++)
+ 77a:	08 15       	cp	r16, r8
+ 77c:	19 05       	cpc	r17, r9
+ 77e:	79 f6       	brne	.-98     	; 0x71e <SYS_HMI_setup_password+0x190>
+						 goto l2;
+					 }
+				}
+				/* checking if two password match */
+				/* if match send password to EEPROM and update the frist_time_flag */
+				if ( (password_recheck[0] == password.passwrd[0]) && (password_recheck[1] == password.passwrd[1]) && (password_recheck[2] == password.passwrd[2]) && (password_recheck[3] == password.passwrd[3]) )
+ 780:	89 81       	ldd	r24, Y+1	; 0x01
+ 782:	f5 01       	movw	r30, r10
+ 784:	90 81       	ld	r25, Z
+ 786:	89 13       	cpse	r24, r25
+ 788:	27 c0       	rjmp	.+78     	; 0x7d8 <SYS_HMI_setup_password+0x24a>
+ 78a:	2a 81       	ldd	r18, Y+2	; 0x02
+ 78c:	f3 01       	movw	r30, r6
+ 78e:	90 81       	ld	r25, Z
+ 790:	29 13       	cpse	r18, r25
+ 792:	22 c0       	rjmp	.+68     	; 0x7d8 <SYS_HMI_setup_password+0x24a>
+ 794:	2b 81       	ldd	r18, Y+3	; 0x03
+ 796:	f2 01       	movw	r30, r4
+ 798:	90 81       	ld	r25, Z
+ 79a:	29 13       	cpse	r18, r25
+ 79c:	1d c0       	rjmp	.+58     	; 0x7d8 <SYS_HMI_setup_password+0x24a>
+ 79e:	2c 81       	ldd	r18, Y+4	; 0x04
+ 7a0:	f1 01       	movw	r30, r2
+ 7a2:	90 81       	ld	r25, Z
+ 7a4:	29 13       	cpse	r18, r25
+ 7a6:	18 c0       	rjmp	.+48     	; 0x7d8 <SYS_HMI_setup_password+0x24a>
+				{
+					UART_send(password.passwrd[0]);
+ 7a8:	0e 94 96 05 	call	0xb2c	; 0xb2c <UART_send>
+					UART_send(password.passwrd[1]);
+ 7ac:	80 91 ea 01 	lds	r24, 0x01EA
+ 7b0:	0e 94 96 05 	call	0xb2c	; 0xb2c <UART_send>
+					UART_send(password.passwrd[2]);
+ 7b4:	80 91 eb 01 	lds	r24, 0x01EB
+ 7b8:	0e 94 96 05 	call	0xb2c	; 0xb2c <UART_send>
+					UART_send(password.passwrd[3]);
+ 7bc:	80 91 ec 01 	lds	r24, 0x01EC
+ 7c0:	0e 94 96 05 	call	0xb2c	; 0xb2c <UART_send>
+					
+					LED_GREEN_flash();
+ 7c4:	0e 94 9d 00 	call	0x13a	; 0x13a <LED_GREEN_flash>
+					LCD_clear();
+ 7c8:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+					LCD_display_string(" plz restart system ");
+ 7cc:	84 e5       	ldi	r24, 0x54	; 84
+ 7ce:	91 e0       	ldi	r25, 0x01	; 1
+ 7d0:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+					return 0;
+ 7d4:	80 e0       	ldi	r24, 0x00	; 0
+ 7d6:	c5 c0       	rjmp	.+394    	; 0x962 <__stack+0x103>
+				}
+					/* password mismatch with previously entered password */
+				else
+				{
+						LCD_clear();
+ 7d8:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+						LCD_display_string(" password mismatch ");
+ 7dc:	84 e0       	ldi	r24, 0x04	; 4
+ 7de:	91 e0       	ldi	r25, 0x01	; 1
+ 7e0:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+						LED_RED_flash();
+ 7e4:	0e 94 8f 00 	call	0x11e	; 0x11e <LED_RED_flash>
+						BUZZER_BEEB();
+ 7e8:	0e 94 74 00 	call	0xe8	; 0xe8 <BUZZER_BEEB>
+ 7ec:	ff ef       	ldi	r31, 0xFF	; 255
+ 7ee:	29 e6       	ldi	r18, 0x69	; 105
+ 7f0:	88 e1       	ldi	r24, 0x18	; 24
+ 7f2:	f1 50       	subi	r31, 0x01	; 1
+ 7f4:	20 40       	sbci	r18, 0x00	; 0
+ 7f6:	80 40       	sbci	r24, 0x00	; 0
+ 7f8:	e1 f7       	brne	.-8      	; 0x7f2 <SYS_HMI_setup_password+0x264>
+ 7fa:	00 c0       	rjmp	.+0      	; 0x7fc <SYS_HMI_setup_password+0x26e>
+ 7fc:	00 00       	nop
+						_delay_ms(1000);		// wait on screen for one sec
+						LCD_clear();
+ 7fe:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+ 802:	31 cf       	rjmp	.-414    	; 0x666 <SYS_HMI_setup_password+0xd8>
+				}
+				
+			}
+			
+				/* or enter 'c' to clear the password to write a new one  */
+			else if (Keypad_get_pressed_key() == 'c') 
+ 804:	0e 94 ee 04 	call	0x9dc	; 0x9dc <Keypad_get_pressed_key>
+ 808:	83 36       	cpi	r24, 0x63	; 99
+ 80a:	09 f0       	breq	.+2      	; 0x80e <SYS_HMI_setup_password+0x280>
+ 80c:	2c cf       	rjmp	.-424    	; 0x666 <SYS_HMI_setup_password+0xd8>
+			{
+				LCD_clear();
+ 80e:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+				LCD_display_string(" passwrd cleared ");
+ 812:	8c e2       	ldi	r24, 0x2C	; 44
+ 814:	91 e0       	ldi	r25, 0x01	; 1
+ 816:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+ 81a:	9f ef       	ldi	r25, 0xFF	; 255
+ 81c:	e9 e6       	ldi	r30, 0x69	; 105
+ 81e:	f8 e1       	ldi	r31, 0x18	; 24
+ 820:	91 50       	subi	r25, 0x01	; 1
+ 822:	e0 40       	sbci	r30, 0x00	; 0
+ 824:	f0 40       	sbci	r31, 0x00	; 0
+ 826:	e1 f7       	brne	.-8      	; 0x820 <SYS_HMI_setup_password+0x292>
+ 828:	00 c0       	rjmp	.+0      	; 0x82a <SYS_HMI_setup_password+0x29c>
+ 82a:	00 00       	nop
+				_delay_ms(1000);				// wait on screen for one sec
+				LCD_clear();		
+ 82c:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+				for(i=0;i<4;i++)
+				password.passwrd[i]=0;
+ 830:	f5 01       	movw	r30, r10
+ 832:	10 82       	st	Z, r1
+ 834:	f3 01       	movw	r30, r6
+ 836:	10 82       	st	Z, r1
+ 838:	f2 01       	movw	r30, r4
+ 83a:	10 82       	st	Z, r1
+ 83c:	f1 01       	movw	r30, r2
+ 83e:	10 82       	st	Z, r1
+ 840:	12 cf       	rjmp	.-476    	; 0x666 <SYS_HMI_setup_password+0xd8>
+	/* entering the password and send it to CNTRL to check if password matches with that is on EEPROM the system will open */
+	else
+	{
+		do
+		{	
+			LCD_display_string(" Plz enter Passwrd ");
+ 842:	88 ec       	ldi	r24, 0xC8	; 200
+ 844:	90 e0       	ldi	r25, 0x00	; 0
+ 846:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+			LCD_move_3rdline();
+ 84a:	0e 94 73 05 	call	0xae6	; 0xae6 <LCD_move_3rdline>
+ 84e:	87 01       	movw	r16, r14
+			/* getting password from user  */
+			for(i=0;i<4;i++)
+			{
+				while(Keypad_get_pressed_key() == NO_KEY_IS_PRESSED)
+ 850:	0e 94 ee 04 	call	0x9dc	; 0x9dc <Keypad_get_pressed_key>
+ 854:	8f 3f       	cpi	r24, 0xFF	; 255
+ 856:	e1 f3       	breq	.-8      	; 0x850 <SYS_HMI_setup_password+0x2c2>
+				;
+				password.passwrd[i]=Keypad_get_pressed_key();
+ 858:	0e 94 ee 04 	call	0x9dc	; 0x9dc <Keypad_get_pressed_key>
+ 85c:	f8 01       	movw	r30, r16
+ 85e:	81 93       	st	Z+, r24
+ 860:	8f 01       	movw	r16, r30
+				LCD_display_char(password.passwrd[i]);
+ 862:	0e 94 34 05 	call	0xa68	; 0xa68 <LCD_display_char>
+ 866:	ff ef       	ldi	r31, 0xFF	; 255
+ 868:	24 e3       	ldi	r18, 0x34	; 52
+ 86a:	8c e0       	ldi	r24, 0x0C	; 12
+ 86c:	f1 50       	subi	r31, 0x01	; 1
+ 86e:	20 40       	sbci	r18, 0x00	; 0
+ 870:	80 40       	sbci	r24, 0x00	; 0
+ 872:	e1 f7       	brne	.-8      	; 0x86c <__stack+0xd>
+ 874:	00 c0       	rjmp	.+0      	; 0x876 <__stack+0x17>
+ 876:	00 00       	nop
+		do
+		{	
+			LCD_display_string(" Plz enter Passwrd ");
+			LCD_move_3rdline();
+			/* getting password from user  */
+			for(i=0;i<4;i++)
+ 878:	08 15       	cp	r16, r8
+ 87a:	19 05       	cpc	r17, r9
+ 87c:	49 f7       	brne	.-46     	; 0x850 <SYS_HMI_setup_password+0x2c2>
+				LCD_display_char(password.passwrd[i]);
+				_delay_ms(500);				// delay for the LCD to appear on the screen
+			}
+		
+			/* sending password for checking */
+			UART_send(password.passwrd[0]);
+ 87e:	f7 01       	movw	r30, r14
+ 880:	80 81       	ld	r24, Z
+ 882:	0e 94 96 05 	call	0xb2c	; 0xb2c <UART_send>
+			UART_send(password.passwrd[1]);
+ 886:	f5 01       	movw	r30, r10
+ 888:	80 81       	ld	r24, Z
+ 88a:	0e 94 96 05 	call	0xb2c	; 0xb2c <UART_send>
+			UART_send(password.passwrd[2]);
+ 88e:	f6 01       	movw	r30, r12
+ 890:	80 81       	ld	r24, Z
+ 892:	0e 94 96 05 	call	0xb2c	; 0xb2c <UART_send>
+			UART_send(password.passwrd[3]);
+ 896:	f3 01       	movw	r30, r6
+ 898:	80 81       	ld	r24, Z
+ 89a:	0e 94 96 05 	call	0xb2c	; 0xb2c <UART_send>
+			
+
+			/* getting confirmation on sent password */	
+			while( UART_isreceived() == 0 )
+ 89e:	0e 94 9f 05 	call	0xb3e	; 0xb3e <UART_isreceived>
+ 8a2:	88 23       	and	r24, r24
+ 8a4:	e1 f3       	breq	.-8      	; 0x89e <__stack+0x3f>
+			;
+			password.password_correctly_enterd_flag = UART_receive_byte();
+ 8a6:	0e 94 9a 05 	call	0xb34	; 0xb34 <UART_receive_byte>
+ 8aa:	f2 01       	movw	r30, r4
+ 8ac:	80 83       	st	Z, r24
+			
+			
+			/* right password entered */
+			if (password.password_correctly_enterd_flag == 1)
+ 8ae:	81 30       	cpi	r24, 0x01	; 1
+ 8b0:	a9 f5       	brne	.+106    	; 0x91c <__stack+0xbd>
+			{
+				LCD_clear();
+ 8b2:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+				LCD_display_string(" passwrd is correct ");
+ 8b6:	89 e6       	ldi	r24, 0x69	; 105
+ 8b8:	91 e0       	ldi	r25, 0x01	; 1
+ 8ba:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+				LED_GREEN_flash();
+ 8be:	0e 94 9d 00 	call	0x13a	; 0x13a <LED_GREEN_flash>
+ 8c2:	ff ef       	ldi	r31, 0xFF	; 255
+ 8c4:	29 e6       	ldi	r18, 0x69	; 105
+ 8c6:	88 e1       	ldi	r24, 0x18	; 24
+ 8c8:	f1 50       	subi	r31, 0x01	; 1
+ 8ca:	20 40       	sbci	r18, 0x00	; 0
+ 8cc:	80 40       	sbci	r24, 0x00	; 0
+ 8ce:	e1 f7       	brne	.-8      	; 0x8c8 <__stack+0x69>
+ 8d0:	00 c0       	rjmp	.+0      	; 0x8d2 <__stack+0x73>
+ 8d2:	00 00       	nop
+				_delay_ms(1000);
+				LCD_clear();
+ 8d4:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+				LCD_display_string(" choose an option ");
+ 8d8:	8e e7       	ldi	r24, 0x7E	; 126
+ 8da:	91 e0       	ldi	r25, 0x01	; 1
+ 8dc:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+				LCD_move_2ndline();
+ 8e0:	0e 94 6f 05 	call	0xade	; 0xade <LCD_move_2ndline>
+				LCD_display_string(" 1-open Door ");
+ 8e4:	81 e9       	ldi	r24, 0x91	; 145
+ 8e6:	91 e0       	ldi	r25, 0x01	; 1
+ 8e8:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+				LCD_move_3rdline();
+ 8ec:	0e 94 73 05 	call	0xae6	; 0xae6 <LCD_move_3rdline>
+				LCD_display_string(" 2-close Door ");
+ 8f0:	8f e9       	ldi	r24, 0x9F	; 159
+ 8f2:	91 e0       	ldi	r25, 0x01	; 1
+ 8f4:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+				LCD_move_4thline();
+ 8f8:	0e 94 77 05 	call	0xaee	; 0xaee <LCD_move_4thline>
+				LCD_display_string(" 3-change passwrd ");
+ 8fc:	8e ea       	ldi	r24, 0xAE	; 174
+ 8fe:	91 e0       	ldi	r25, 0x01	; 1
+ 900:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+ 904:	9f ef       	ldi	r25, 0xFF	; 255
+ 906:	e9 e6       	ldi	r30, 0x69	; 105
+ 908:	f8 e1       	ldi	r31, 0x18	; 24
+ 90a:	91 50       	subi	r25, 0x01	; 1
+ 90c:	e0 40       	sbci	r30, 0x00	; 0
+ 90e:	f0 40       	sbci	r31, 0x00	; 0
+ 910:	e1 f7       	brne	.-8      	; 0x90a <__stack+0xab>
+ 912:	00 c0       	rjmp	.+0      	; 0x914 <__stack+0xb5>
+ 914:	00 00       	nop
+				_delay_ms(1000);
+				/* getting the right menu option */
+			
+				menu_option = SYS_HMI_get_menu_option ();
+ 916:	0e 94 ad 02 	call	0x55a	; 0x55a <SYS_HMI_get_menu_option>
+ 91a:	23 c0       	rjmp	.+70     	; 0x962 <__stack+0x103>
+ 91c:	3a 94       	dec	r3
+			
+			}
+			/* wrong entered password */
+			else
+			{
+				if (Mismatch_counter < 3)
+ 91e:	b1 f0       	breq	.+44     	; 0x94c <__stack+0xed>
+				{
+					Mismatch_counter++;
+					LCD_clear();
+ 920:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+					LCD_display_string(" passwrd is wrong ");
+ 924:	81 ec       	ldi	r24, 0xC1	; 193
+ 926:	91 e0       	ldi	r25, 0x01	; 1
+ 928:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+					LED_RED_flash();
+ 92c:	0e 94 8f 00 	call	0x11e	; 0x11e <LED_RED_flash>
+					BUZZER_BEEB();
+ 930:	0e 94 74 00 	call	0xe8	; 0xe8 <BUZZER_BEEB>
+ 934:	2f ef       	ldi	r18, 0xFF	; 255
+ 936:	89 e6       	ldi	r24, 0x69	; 105
+ 938:	98 e1       	ldi	r25, 0x18	; 24
+ 93a:	21 50       	subi	r18, 0x01	; 1
+ 93c:	80 40       	sbci	r24, 0x00	; 0
+ 93e:	90 40       	sbci	r25, 0x00	; 0
+ 940:	e1 f7       	brne	.-8      	; 0x93a <__stack+0xdb>
+ 942:	00 c0       	rjmp	.+0      	; 0x944 <__stack+0xe5>
+ 944:	00 00       	nop
+					_delay_ms(1000);
+					LCD_clear();
+ 946:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+						BUZZER_BEEB();
+						return 0;
+				}
+
+			}
+		}while(1);
+ 94a:	7b cf       	rjmp	.-266    	; 0x842 <SYS_HMI_setup_password+0x2b4>
+					_delay_ms(1000);
+					LCD_clear();
+				}
+				else
+				{
+						LCD_clear();
+ 94c:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+						LCD_display_string(" system is locked");
+ 950:	84 ed       	ldi	r24, 0xD4	; 212
+ 952:	91 e0       	ldi	r25, 0x01	; 1
+ 954:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+						LED_RED_ON();
+ 958:	0e 94 65 00 	call	0xca	; 0xca <LED_RED_ON>
+						for(;;)
+						BUZZER_BEEB();
+ 95c:	0e 94 74 00 	call	0xe8	; 0xe8 <BUZZER_BEEB>
+ 960:	fd cf       	rjmp	.-6      	; 0x95c <__stack+0xfd>
+
+			}
+		}while(1);
+	} 
+
+}
+ 962:	0f 90       	pop	r0
+ 964:	0f 90       	pop	r0
+ 966:	0f 90       	pop	r0
+ 968:	0f 90       	pop	r0
+ 96a:	df 91       	pop	r29
+ 96c:	cf 91       	pop	r28
+ 96e:	1f 91       	pop	r17
+ 970:	0f 91       	pop	r16
+ 972:	ff 90       	pop	r15
+ 974:	ef 90       	pop	r14
+ 976:	df 90       	pop	r13
+ 978:	cf 90       	pop	r12
+ 97a:	bf 90       	pop	r11
+ 97c:	af 90       	pop	r10
+ 97e:	9f 90       	pop	r9
+ 980:	8f 90       	pop	r8
+ 982:	7f 90       	pop	r7
+ 984:	6f 90       	pop	r6
+ 986:	5f 90       	pop	r5
+ 988:	4f 90       	pop	r4
+ 98a:	3f 90       	pop	r3
+ 98c:	2f 90       	pop	r2
+ 98e:	08 95       	ret
+
+00000990 <SYS_HMI_resend_menu_option>:
+ *  Description: Function is used to resend the menu option
+ **/
+void SYS_HMI_resend_menu_option (void)
+{
+	uint8 menu_option;
+	LCD_clear();
+ 990:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+	LCD_display_string(" choose an option ");
+ 994:	8e e7       	ldi	r24, 0x7E	; 126
+ 996:	91 e0       	ldi	r25, 0x01	; 1
+ 998:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+	LCD_move_2ndline();
+ 99c:	0e 94 6f 05 	call	0xade	; 0xade <LCD_move_2ndline>
+	LCD_display_string(" 1-open Door ");
+ 9a0:	81 e9       	ldi	r24, 0x91	; 145
+ 9a2:	91 e0       	ldi	r25, 0x01	; 1
+ 9a4:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+	LCD_move_3rdline();
+ 9a8:	0e 94 73 05 	call	0xae6	; 0xae6 <LCD_move_3rdline>
+	LCD_display_string(" 2-close Door ");
+ 9ac:	8f e9       	ldi	r24, 0x9F	; 159
+ 9ae:	91 e0       	ldi	r25, 0x01	; 1
+ 9b0:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+	LCD_move_4thline();
+ 9b4:	0e 94 77 05 	call	0xaee	; 0xaee <LCD_move_4thline>
+	LCD_display_string(" 3-change passwrd ");
+ 9b8:	8e ea       	ldi	r24, 0xAE	; 174
+ 9ba:	91 e0       	ldi	r25, 0x01	; 1
+ 9bc:	0e 94 40 05 	call	0xa80	; 0xa80 <LCD_display_string>
+ 9c0:	2f ef       	ldi	r18, 0xFF	; 255
+ 9c2:	89 e6       	ldi	r24, 0x69	; 105
+ 9c4:	98 e1       	ldi	r25, 0x18	; 24
+ 9c6:	21 50       	subi	r18, 0x01	; 1
+ 9c8:	80 40       	sbci	r24, 0x00	; 0
+ 9ca:	90 40       	sbci	r25, 0x00	; 0
+ 9cc:	e1 f7       	brne	.-8      	; 0x9c6 <SYS_HMI_resend_menu_option+0x36>
+ 9ce:	00 c0       	rjmp	.+0      	; 0x9d0 <SYS_HMI_resend_menu_option+0x40>
+ 9d0:	00 00       	nop
+	_delay_ms(1000);
+	
+	menu_option=SYS_HMI_get_menu_option();
+ 9d2:	0e 94 ad 02 	call	0x55a	; 0x55a <SYS_HMI_get_menu_option>
+	
+	SYS_HMI_menu_option_send(menu_option);
+ 9d6:	0e 94 61 01 	call	0x2c2	; 0x2c2 <SYS_HMI_menu_option_send>
+ 9da:	08 95       	ret
+
+000009dc <Keypad_get_pressed_key>:
+/****************************************************************************************************************/
+/**
+ *  Description: Function used to get the keypad pressed key 
+ **/ 
+uint8 Keypad_get_pressed_key (void)
+{
+ 9dc:	80 e0       	ldi	r24, 0x00	; 0
+ 9de:	90 e0       	ldi	r25, 0x00	; 0
+	 
+	for(uint8 row=0;row<4;row++)																	// loop on four PINS 
+	{
+		keypad_DIR =  (1<<row);																		// set one pin of Four PINs of keypad as input	
+ 9e0:	41 e0       	ldi	r20, 0x01	; 1
+ 9e2:	50 e0       	ldi	r21, 0x00	; 0
+ 9e4:	bc 01       	movw	r22, r24
+ 9e6:	9a 01       	movw	r18, r20
+ 9e8:	08 2e       	mov	r0, r24
+ 9ea:	02 c0       	rjmp	.+4      	; 0x9f0 <Keypad_get_pressed_key+0x14>
+ 9ec:	22 0f       	add	r18, r18
+ 9ee:	33 1f       	adc	r19, r19
+ 9f0:	0a 94       	dec	r0
+ 9f2:	e2 f7       	brpl	.-8      	; 0x9ec <Keypad_get_pressed_key+0x10>
+ 9f4:	2a bb       	out	0x1a, r18	; 26
+		Keypad_PORT= ~(1<<row);																		//for this pin enable pull up network
+ 9f6:	20 95       	com	r18
+ 9f8:	2b bb       	out	0x1b, r18	; 27
+		for( uint8 col=0;col<4;col++)																// loop other 4 pins to discover which botton is pressd
+		{
+			if((keypad_PIN & (0b11110000))==((~(1<<(col+4)))&(0b11110000)))
+ 9fa:	29 b3       	in	r18, 0x19	; 25
+ 9fc:	20 7f       	andi	r18, 0xF0	; 240
+ 9fe:	20 3e       	cpi	r18, 0xE0	; 224
+ a00:	a9 f0       	breq	.+42     	; 0xa2c <Keypad_get_pressed_key+0x50>
+ a02:	29 b3       	in	r18, 0x19	; 25
+ a04:	20 7f       	andi	r18, 0xF0	; 240
+ a06:	20 3d       	cpi	r18, 0xD0	; 208
+ a08:	59 f0       	breq	.+22     	; 0xa20 <Keypad_get_pressed_key+0x44>
+ a0a:	29 b3       	in	r18, 0x19	; 25
+ a0c:	20 7f       	andi	r18, 0xF0	; 240
+ a0e:	20 3b       	cpi	r18, 0xB0	; 176
+ a10:	51 f0       	breq	.+20     	; 0xa26 <Keypad_get_pressed_key+0x4a>
+ a12:	29 b3       	in	r18, 0x19	; 25
+ a14:	20 7f       	andi	r18, 0xF0	; 240
+ a16:	20 37       	cpi	r18, 0x70	; 112
+ a18:	a9 f4       	brne	.+42     	; 0xa44 <Keypad_get_pressed_key+0x68>
+ a1a:	e3 e0       	ldi	r30, 0x03	; 3
+ a1c:	f0 e0       	ldi	r31, 0x00	; 0
+ a1e:	08 c0       	rjmp	.+16     	; 0xa30 <Keypad_get_pressed_key+0x54>
+ a20:	e1 e0       	ldi	r30, 0x01	; 1
+ a22:	f0 e0       	ldi	r31, 0x00	; 0
+ a24:	05 c0       	rjmp	.+10     	; 0xa30 <Keypad_get_pressed_key+0x54>
+ a26:	e2 e0       	ldi	r30, 0x02	; 2
+ a28:	f0 e0       	ldi	r31, 0x00	; 0
+ a2a:	02 c0       	rjmp	.+4      	; 0xa30 <Keypad_get_pressed_key+0x54>
+ a2c:	e0 e0       	ldi	r30, 0x00	; 0
+ a2e:	f0 e0       	ldi	r31, 0x00	; 0
+				return( key_table[row][col]);														// return pressed botton 
+ a30:	66 0f       	add	r22, r22
+ a32:	77 1f       	adc	r23, r23
+ a34:	66 0f       	add	r22, r22
+ a36:	77 1f       	adc	r23, r23
+ a38:	e6 0f       	add	r30, r22
+ a3a:	f7 1f       	adc	r31, r23
+ a3c:	e4 59       	subi	r30, 0x94	; 148
+ a3e:	ff 4f       	sbci	r31, 0xFF	; 255
+ a40:	80 81       	ld	r24, Z
+ a42:	08 95       	ret
+ a44:	01 96       	adiw	r24, 0x01	; 1
+ *  Description: Function used to get the keypad pressed key 
+ **/ 
+uint8 Keypad_get_pressed_key (void)
+{
+	 
+	for(uint8 row=0;row<4;row++)																	// loop on four PINS 
+ a46:	84 30       	cpi	r24, 0x04	; 4
+ a48:	91 05       	cpc	r25, r1
+ a4a:	61 f6       	brne	.-104    	; 0x9e4 <Keypad_get_pressed_key+0x8>
+		{
+			if((keypad_PIN & (0b11110000))==((~(1<<(col+4)))&(0b11110000)))
+				return( key_table[row][col]);														// return pressed botton 
+		}	
+	}
+	return NO_KEY_IS_PRESSED;																		// if nothing is pressed return no key is pressed
+ a4c:	8f ef       	ldi	r24, 0xFF	; 255
+ a4e:	08 95       	ret
+
+00000a50 <LCD_send_cmd>:
+/**
+ *  Description: Function used to send instruction to LCD 
+ **/ 
+void LCD_send_cmd(uint8 cmd)
+{
+	Data_PORT = cmd;									// command to be sent
+ a50:	85 bb       	out	0x15, r24	; 21
+	CLR_BIT(CTRL_PORT,RS);								// selecting to transfer instruction data
+ a52:	92 98       	cbi	0x12, 2	; 18
+	CLR_BIT(CTRL_PORT,RW);								// selecting write to LCD
+ a54:	93 98       	cbi	0x12, 3	; 18
+	CLR_BIT(CTRL_PORT,E);								// enable LCD to read instruction data 
+ a56:	94 98       	cbi	0x12, 4	; 18
+ a58:	89 ef       	ldi	r24, 0xF9	; 249
+ a5a:	90 e0       	ldi	r25, 0x00	; 0
+ a5c:	01 97       	sbiw	r24, 0x01	; 1
+ a5e:	f1 f7       	brne	.-4      	; 0xa5c <LCD_send_cmd+0xc>
+ a60:	00 c0       	rjmp	.+0      	; 0xa62 <LCD_send_cmd+0x12>
+ a62:	00 00       	nop
+	_delay_ms(1);										// wait for instruction to be accepted 
+	SET_BIT(CTRL_PORT,E);								// disable LCD
+ a64:	94 9a       	sbi	0x12, 4	; 18
+ a66:	08 95       	ret
+
+00000a68 <LCD_display_char>:
+/**
+ *  Description: Function is used to display data to LCD 
+ **/ 
+void LCD_display_char(uint8 data)
+{
+	Data_PORT = data;										// character to be displayed on LCD
+ a68:	85 bb       	out	0x15, r24	; 21
+	SET_BIT(CTRL_PORT,RS);									// selecting to transfer display data	
+ a6a:	92 9a       	sbi	0x12, 2	; 18
+	CLR_BIT(CTRL_PORT,RW);									// selecting to write to LCD
+ a6c:	93 98       	cbi	0x12, 3	; 18
+	CLR_BIT(CTRL_PORT,E);									// enable LCD to read instruction data 
+ a6e:	94 98       	cbi	0x12, 4	; 18
+ a70:	89 ef       	ldi	r24, 0xF9	; 249
+ a72:	90 e0       	ldi	r25, 0x00	; 0
+ a74:	01 97       	sbiw	r24, 0x01	; 1
+ a76:	f1 f7       	brne	.-4      	; 0xa74 <LCD_display_char+0xc>
+ a78:	00 c0       	rjmp	.+0      	; 0xa7a <LCD_display_char+0x12>
+ a7a:	00 00       	nop
+	_delay_ms(1);											// wait for instruction to be accepted
+	SET_BIT(CTRL_PORT,E);									// disable LCD	
+ a7c:	94 9a       	sbi	0x12, 4	; 18
+ a7e:	08 95       	ret
+
+00000a80 <LCD_display_string>:
+/****************************************************************************************************************************************/
+/**
+ *  Description: Function is used to display string on screen 
+ **/ 
+void LCD_display_string(uint8 *string)
+{
+ a80:	1f 93       	push	r17
+ a82:	cf 93       	push	r28
+ a84:	df 93       	push	r29
+ a86:	ec 01       	movw	r28, r24
+	uint8 Count=0;											// counter to point to characters in the string 
+	while(string[Count]!='\0')								//Display characters of string until END of string '\0'
+ a88:	88 81       	ld	r24, Y
+ a8a:	88 23       	and	r24, r24
+ a8c:	51 f0       	breq	.+20     	; 0xaa2 <LCD_display_string+0x22>
+/**
+ *  Description: Function is used to display string on screen 
+ **/ 
+void LCD_display_string(uint8 *string)
+{
+	uint8 Count=0;											// counter to point to characters in the string 
+ a8e:	10 e0       	ldi	r17, 0x00	; 0
+	while(string[Count]!='\0')								//Display characters of string until END of string '\0'
+	{
+			LCD_display_char(string[Count]); 
+ a90:	0e 94 34 05 	call	0xa68	; 0xa68 <LCD_display_char>
+			Count++;
+ a94:	1f 5f       	subi	r17, 0xFF	; 255
+ *  Description: Function is used to display string on screen 
+ **/ 
+void LCD_display_string(uint8 *string)
+{
+	uint8 Count=0;											// counter to point to characters in the string 
+	while(string[Count]!='\0')								//Display characters of string until END of string '\0'
+ a96:	fe 01       	movw	r30, r28
+ a98:	e1 0f       	add	r30, r17
+ a9a:	f1 1d       	adc	r31, r1
+ a9c:	80 81       	ld	r24, Z
+ a9e:	81 11       	cpse	r24, r1
+ aa0:	f7 cf       	rjmp	.-18     	; 0xa90 <LCD_display_string+0x10>
+	{
+			LCD_display_char(string[Count]); 
+			Count++;
+	}
+	
+}
+ aa2:	df 91       	pop	r29
+ aa4:	cf 91       	pop	r28
+ aa6:	1f 91       	pop	r17
+ aa8:	08 95       	ret
+
+00000aaa <LCD_clear>:
+/**
+ *  Description: Function is used to clear screen and return crusor to its initial position 
+ **/ 
+void LCD_clear()
+{
+		LCD_send_cmd(Clear_display);
+ aaa:	81 e0       	ldi	r24, 0x01	; 1
+ aac:	0e 94 28 05 	call	0xa50	; 0xa50 <LCD_send_cmd>
+ ab0:	08 95       	ret
+
+00000ab2 <LCD_Init>:
+/**
+ *  Description: Function used to initialize the LCD in 8 bit 4 Line Mode & ligth on Display
+ **/ 
+void LCD_Init() 
+{
+	Data_DIR= 0xff;										// set direction of data Pins as output to send commands to LCD 
+ ab2:	8f ef       	ldi	r24, 0xFF	; 255
+ ab4:	84 bb       	out	0x14, r24	; 20
+	CTRL_DIR= (1<<RS)|(1<<E)|(1<<RW);										// set direction of control Pins as output to send commands to LCD
+ ab6:	8c e1       	ldi	r24, 0x1C	; 28
+ ab8:	81 bb       	out	0x11, r24	; 17
+	
+	LCD_clear();										// clear ,followed by 8bit 1 line followed by entry mode initialization 
+ aba:	0e 94 55 05 	call	0xaaa	; 0xaaa <LCD_clear>
+	LCD_send_cmd(Mode8_1line);							// all together are used to reset LCD module
+ abe:	82 e3       	ldi	r24, 0x32	; 50
+ ac0:	0e 94 28 05 	call	0xa50	; 0xa50 <LCD_send_cmd>
+	LCD_send_cmd(Display_off);
+ ac4:	88 e0       	ldi	r24, 0x08	; 8
+ ac6:	0e 94 28 05 	call	0xa50	; 0xa50 <LCD_send_cmd>
+	LCD_send_cmd(Entry_Mode_init);						
+ aca:	86 e0       	ldi	r24, 0x06	; 6
+ acc:	0e 94 28 05 	call	0xa50	; 0xa50 <LCD_send_cmd>
+	LCD_send_cmd(Mode8_4lines);							//initialize the LCD to 8 bit 4 line Mode
+ ad0:	88 e3       	ldi	r24, 0x38	; 56
+ ad2:	0e 94 28 05 	call	0xa50	; 0xa50 <LCD_send_cmd>
+	LCD_send_cmd(Display_on);							// light on display
+ ad6:	8f e0       	ldi	r24, 0x0F	; 15
+ ad8:	0e 94 28 05 	call	0xa50	; 0xa50 <LCD_send_cmd>
+ adc:	08 95       	ret
+
+00000ade <LCD_move_2ndline>:
+/**
+ *  Description: Function is used to move cursor to the 2nd line 
+ **/ 
+void LCD_move_2ndline()
+{
+	LCD_send_cmd(DDRAM_add_2ndline);
+ ade:	80 ec       	ldi	r24, 0xC0	; 192
+ ae0:	0e 94 28 05 	call	0xa50	; 0xa50 <LCD_send_cmd>
+ ae4:	08 95       	ret
+
+00000ae6 <LCD_move_3rdline>:
+/**
+ *  Description: Function is used to move cursor to the 3rd line 
+ **/ 
+void LCD_move_3rdline()
+{
+	LCD_send_cmd(DDRAM_add_3rdline);
+ ae6:	84 e9       	ldi	r24, 0x94	; 148
+ ae8:	0e 94 28 05 	call	0xa50	; 0xa50 <LCD_send_cmd>
+ aec:	08 95       	ret
+
+00000aee <LCD_move_4thline>:
+/**
+ *  Description: Function is used to move cursor to the 4th line 
+ **/ 
+void LCD_move_4thline( )
+{
+	LCD_send_cmd(DDRAM_add_4thline);
+ aee:	84 ed       	ldi	r24, 0xD4	; 212
+ af0:	0e 94 28 05 	call	0xa50	; 0xa50 <LCD_send_cmd>
+ af4:	08 95       	ret
+
+00000af6 <__vector_13>:
+/**************************************************************************************/
+/**
+ *  Description: Interrupt service routine that rise a flag when receiving frame is complete
+ **/ 
+ISR(USART_RXC_vect)
+{
+ af6:	1f 92       	push	r1
+ af8:	0f 92       	push	r0
+ afa:	0f b6       	in	r0, 0x3f	; 63
+ afc:	0f 92       	push	r0
+ afe:	11 24       	eor	r1, r1
+ b00:	8f 93       	push	r24
+	new_flag = 1;
+ b02:	81 e0       	ldi	r24, 0x01	; 1
+ b04:	80 93 ed 01 	sts	0x01ED, r24
+	data=UDR;
+ b08:	8c b1       	in	r24, 0x0c	; 12
+ b0a:	80 93 ee 01 	sts	0x01EE, r24
+}
+ b0e:	8f 91       	pop	r24
+ b10:	0f 90       	pop	r0
+ b12:	0f be       	out	0x3f, r0	; 63
+ b14:	0f 90       	pop	r0
+ b16:	1f 90       	pop	r1
+ b18:	18 95       	reti
+
+00000b1a <UART_init>:
+/**
+ *  Description: function is used to initialize the UART module in the 8-bit with 9600 bit/sec baud rate 
+ **/ 
+void UART_init(void)
+{
+	UCSRA=0x00;
+ b1a:	1b b8       	out	0x0b, r1	; 11
+	UCSRB=(1<<TXEN)|(1<<RXEN)|(1<<RXCIE);			/* enable transmitter ,enable receiver and enable receiver interrupt */   
+ b1c:	88 e9       	ldi	r24, 0x98	; 152
+ b1e:	8a b9       	out	0x0a, r24	; 10
+	UCSRC=(1<<UCSZ1)|(1<<UCSZ0)|(1<<URSEL);			/* enable 8-bit transmission ,asynchronous operation , parity bit is disabled */
+ b20:	86 e8       	ldi	r24, 0x86	; 134
+ b22:	80 bd       	out	0x20, r24	; 32
+	UBRRH=0;
+ b24:	10 bc       	out	0x20, r1	; 32
+	UBRRL=51;
+ b26:	83 e3       	ldi	r24, 0x33	; 51
+ b28:	89 b9       	out	0x09, r24	; 9
+ b2a:	08 95       	ret
+
+00000b2c <UART_send>:
+/**
+ *  Description: Function is used to send character using UART 
+ **/ 
+void UART_send(uint8 sent_data)
+{
+	while(!(UCSRA & (1<<UDRE) ))
+ b2c:	5d 9b       	sbis	0x0b, 5	; 11
+ b2e:	fe cf       	rjmp	.-4      	; 0xb2c <UART_send>
+	;									// Do nothing until UDR is ready for more data to be written to it
+	UDR=sent_data;
+ b30:	8c b9       	out	0x0c, r24	; 12
+ b32:	08 95       	ret
+
+00000b34 <UART_receive_byte>:
+/**
+ *  Description: Function is used to receive a byte using the UART
+ **/ 
+uint8 UART_receive_byte(void)
+{
+	new_flag=0;
+ b34:	10 92 ed 01 	sts	0x01ED, r1
+	return data;
+}
+ b38:	80 91 ee 01 	lds	r24, 0x01EE
+ b3c:	08 95       	ret
+
+00000b3e <UART_isreceived>:
+ *  Description: Function return 1 when the reception is complete and 0 otherwise 
+ **/ 
+uint8 UART_isreceived()
+{
+	return new_flag;
+}
+ b3e:	80 91 ed 01 	lds	r24, 0x01ED
+ b42:	08 95       	ret
+
+00000b44 <atoi>:
+ b44:	fc 01       	movw	r30, r24
+ b46:	88 27       	eor	r24, r24
+ b48:	99 27       	eor	r25, r25
+ b4a:	e8 94       	clt
+ b4c:	21 91       	ld	r18, Z+
+ b4e:	20 32       	cpi	r18, 0x20	; 32
+ b50:	e9 f3       	breq	.-6      	; 0xb4c <atoi+0x8>
+ b52:	29 30       	cpi	r18, 0x09	; 9
+ b54:	10 f0       	brcs	.+4      	; 0xb5a <atoi+0x16>
+ b56:	2e 30       	cpi	r18, 0x0E	; 14
+ b58:	c8 f3       	brcs	.-14     	; 0xb4c <atoi+0x8>
+ b5a:	2b 32       	cpi	r18, 0x2B	; 43
+ b5c:	41 f0       	breq	.+16     	; 0xb6e <atoi+0x2a>
+ b5e:	2d 32       	cpi	r18, 0x2D	; 45
+ b60:	39 f4       	brne	.+14     	; 0xb70 <atoi+0x2c>
+ b62:	68 94       	set
+ b64:	04 c0       	rjmp	.+8      	; 0xb6e <atoi+0x2a>
+ b66:	0e 94 c0 05 	call	0xb80	; 0xb80 <__mulhi_const_10>
+ b6a:	82 0f       	add	r24, r18
+ b6c:	91 1d       	adc	r25, r1
+ b6e:	21 91       	ld	r18, Z+
+ b70:	20 53       	subi	r18, 0x30	; 48
+ b72:	2a 30       	cpi	r18, 0x0A	; 10
+ b74:	c0 f3       	brcs	.-16     	; 0xb66 <atoi+0x22>
+ b76:	1e f4       	brtc	.+6      	; 0xb7e <atoi+0x3a>
+ b78:	90 95       	com	r25
+ b7a:	81 95       	neg	r24
+ b7c:	9f 4f       	sbci	r25, 0xFF	; 255
+ b7e:	08 95       	ret
+
+00000b80 <__mulhi_const_10>:
+ b80:	7a e0       	ldi	r23, 0x0A	; 10
+ b82:	97 9f       	mul	r25, r23
+ b84:	90 2d       	mov	r25, r0
+ b86:	87 9f       	mul	r24, r23
+ b88:	80 2d       	mov	r24, r0
+ b8a:	91 0d       	add	r25, r1
+ b8c:	11 24       	eor	r1, r1
+ b8e:	08 95       	ret
+
+00000b90 <_exit>:
+ b90:	f8 94       	cli
+
+00000b92 <__stop_program>:
+ b92:	ff cf       	rjmp	.-2      	; 0xb92 <__stop_program>

@@ -1,0 +1,68 @@
+.TH "C:/Users/a7med/Desktop/Embbeded Project/Project code/Door_locker_project/Door_locker_project_CNTRL/Door_locker_CNTRL_ECU/Timer.h" 3 "Sat Nov 22 2014" "Door_locker_system" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/a7med/Desktop/Embbeded Project/Project code/Door_locker_project/Door_locker_project_CNTRL/Door_locker_CNTRL_ECU/Timer.h \- 
+.PP
+Timer Module for Timers initializations to work in PWM mode &\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'DIO\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBTimer0_PWM_init\fP (uint8 duty_cycle)"
+.br
+.ti -1c
+.RI "void \fBTimer2_PWM_init\fP (uint8 duty_cycle)"
+.br
+.ti -1c
+.RI "void \fBTimer0_PWM_Set_duty\fP (uint8 duty_cycle)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Timer Module for Timers initializations to work in PWM mode &\&. 
+
+
+.PP
+\fBDate:\fP
+.RS 4
+11/8/2014 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+a7med 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+
+.PP
+Definition in file \fBTimer\&.h\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void Timer0_PWM_init (uint8duty_cycle)"
+Description: Function used to initialize timer 1 to work in PWM mode function take Duty Cycle to output a signal on PIN with pulse width equal to duty cycle ( Values entered is from 0 to 255 ) 
+.PP
+Definition at line 18 of file Timer\&.c\&.
+.SS "void Timer0_PWM_Set_duty (uint8duty_cycle)"
+Description: Function used to initialize timer 1 to work in PWM mode function take Duty Cycle to output a signal on PIN with pulse width equal to duty cycle ( Values entered is from 0 to 255 ) 
+.PP
+Definition at line 35 of file Timer\&.c\&.
+.SS "void Timer2_PWM_init (uint8duty_cycle)"
+Description: Function used to initialize timer 2 to work in PWM mode function take Duty Cycle to output a signal on PIN with pulse width equal to duty cycle 
+.PP
+Definition at line 44 of file Timer\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Door_locker_system from the source code\&.

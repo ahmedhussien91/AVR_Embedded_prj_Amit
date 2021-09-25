@@ -1,0 +1,118 @@
+\hypertarget{_c_n_t_r_l___s_y_s_8h}{\section{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+C\+N\+T\+R\+L/\+Door\+\_\+locker\+\_\+\+C\+N\+T\+R\+L\+\_\+\+E\+C\+U/\+C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.h File Reference}
+\label{_c_n_t_r_l___s_y_s_8h}\index{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+C\+N\+T\+R\+L/\+Door\+\_\+locker\+\_\+\+C\+N\+T\+R\+L\+\_\+\+E\+C\+U/\+C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h@{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+C\+N\+T\+R\+L/\+Door\+\_\+locker\+\_\+\+C\+N\+T\+R\+L\+\_\+\+E\+C\+U/\+C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h}}
+}
+
+
+Module for C\+N\+T\+R\+L E\+C\+U used to initialize cntrol system, setup password and execute the received menu option.  
+
+
+{\ttfamily \#include \char`\"{}Timer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}motor.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}E\+E\+P\+R\+O\+M.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}U\+A\+R\+T.\+h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structpasswords}{passwords}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structpasswords}{passwords} \hyperlink{_c_n_t_r_l___s_y_s_8h_aa4e680b11d3edf18bafc01071e82c182}{pass}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_c_n_t_r_l___s_y_s_8h_af5beaeb07618a90f6c7d7dd320c224fc}{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+\+Init} (void)
+\item 
+uint8 \hyperlink{_c_n_t_r_l___s_y_s_8h_a3d54700cc8c41568be1d493432b2f21e}{S\+Y\+S\+\_\+send\+\_\+password\+\_\+status} (void)
+\item 
+uint8 \hyperlink{_c_n_t_r_l___s_y_s_8h_a414334fcaaa126603927966a27cf85de}{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+setup\+\_\+password} (void)
+\item 
+void \hyperlink{_c_n_t_r_l___s_y_s_8h_a6487b9a5d372146c5407f2fb192c4dae}{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+open} (uint8 servo\+\_\+angle)
+\item 
+void \hyperlink{_c_n_t_r_l___s_y_s_8h_ab09be90279c97648ba07e42b91690711}{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+close} (void)
+\item 
+void \hyperlink{_c_n_t_r_l___s_y_s_8h_a1b6109f781bb9b967a53058c420f3a95}{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+change\+\_\+password} (void)
+\item 
+void \hyperlink{_c_n_t_r_l___s_y_s_8h_a094c95496c4db05ba5d218741f951971}{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+menu\+\_\+option} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Module for C\+N\+T\+R\+L E\+C\+U used to initialize cntrol system, setup password and execute the received menu option. 
+
+\begin{DoxyDate}{Date}
+11/19/2014 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+a7med 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{_c_n_t_r_l___s_y_s_8h_aa4e680b11d3edf18bafc01071e82c182}{\index{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h@{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h}!pass@{pass}}
+\index{pass@{pass}!C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h@{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h}}
+\subsubsection[{pass}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf passwords}  {\bf pass}}}\label{_c_n_t_r_l___s_y_s_8h_aa4e680b11d3edf18bafc01071e82c182}
+Description\+: Structure to carry password and its status it contain
+\begin{DoxyEnumerate}
+\item the frist\+\_\+time\+\_\+flag --$>$ the frist time to use system (0) or not (1)
+\item the password\+\_\+saved\+\_\+flag --$>$ password saved (1) or (0)
+\item the password\+\_\+correctly\+\_\+entered\+\_\+flag --$>$ password match with password on E\+E\+P\+R\+O\+M (1) or mismatch(0)
+\item the password 
+\end{DoxyEnumerate}
+
+\subsection{Function Documentation}
+\hypertarget{_c_n_t_r_l___s_y_s_8h_a1b6109f781bb9b967a53058c420f3a95}{\index{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h@{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h}!S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+change\+\_\+password@{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+change\+\_\+password}}
+\index{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+change\+\_\+password@{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+change\+\_\+password}!C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h@{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h}}
+\subsubsection[{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+change\+\_\+password}]{\setlength{\rightskip}{0pt plus 5cm}void S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+change\+\_\+password (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_c_n_t_r_l___s_y_s_8h_a1b6109f781bb9b967a53058c420f3a95}
+Description\+: Function is used to change the password in E\+E\+P\+R\+O\+M \hypertarget{_c_n_t_r_l___s_y_s_8h_ab09be90279c97648ba07e42b91690711}{\index{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h@{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h}!S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+close@{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+close}}
+\index{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+close@{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+close}!C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h@{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h}}
+\subsubsection[{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+close}]{\setlength{\rightskip}{0pt plus 5cm}void S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+close (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_c_n_t_r_l___s_y_s_8h_ab09be90279c97648ba07e42b91690711}
+Description\+: Function is used to close the door of the system by moving the motors in the right direction \hypertarget{_c_n_t_r_l___s_y_s_8h_af5beaeb07618a90f6c7d7dd320c224fc}{\index{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h@{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h}!S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+\+Init@{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+\+Init}}
+\index{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+\+Init@{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+\+Init}!C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h@{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h}}
+\subsubsection[{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+\+Init}]{\setlength{\rightskip}{0pt plus 5cm}void S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_c_n_t_r_l___s_y_s_8h_af5beaeb07618a90f6c7d7dd320c224fc}
+Description\+: Function is used to Initialize Control system \hypertarget{_c_n_t_r_l___s_y_s_8h_a094c95496c4db05ba5d218741f951971}{\index{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h@{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h}!S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+menu\+\_\+option@{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+menu\+\_\+option}}
+\index{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+menu\+\_\+option@{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+menu\+\_\+option}!C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h@{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h}}
+\subsubsection[{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+menu\+\_\+option}]{\setlength{\rightskip}{0pt plus 5cm}void S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+menu\+\_\+option (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_c_n_t_r_l___s_y_s_8h_a094c95496c4db05ba5d218741f951971}
+Description\+: Function is used to receive menu option and apply it \hypertarget{_c_n_t_r_l___s_y_s_8h_a6487b9a5d372146c5407f2fb192c4dae}{\index{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h@{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h}!S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+open@{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+open}}
+\index{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+open@{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+open}!C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h@{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h}}
+\subsubsection[{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+open}]{\setlength{\rightskip}{0pt plus 5cm}void S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+open (
+\begin{DoxyParamCaption}
+\item[{uint8}]{servo\+\_\+angle}
+\end{DoxyParamCaption}
+)}}\label{_c_n_t_r_l___s_y_s_8h_a6487b9a5d372146c5407f2fb192c4dae}
+Description\+: Function is used to open the door of the system by moving the motors in the right direction \hypertarget{_c_n_t_r_l___s_y_s_8h_a414334fcaaa126603927966a27cf85de}{\index{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h@{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h}!S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+setup\+\_\+password@{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+setup\+\_\+password}}
+\index{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+setup\+\_\+password@{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+setup\+\_\+password}!C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h@{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h}}
+\subsubsection[{S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+setup\+\_\+password}]{\setlength{\rightskip}{0pt plus 5cm}uint8 S\+Y\+S\+\_\+\+C\+N\+T\+R\+L\+\_\+setup\+\_\+password (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_c_n_t_r_l___s_y_s_8h_a414334fcaaa126603927966a27cf85de}
+Description\+: Function is used to setup the password \hypertarget{_c_n_t_r_l___s_y_s_8h_a3d54700cc8c41568be1d493432b2f21e}{\index{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h@{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h}!S\+Y\+S\+\_\+send\+\_\+password\+\_\+status@{S\+Y\+S\+\_\+send\+\_\+password\+\_\+status}}
+\index{S\+Y\+S\+\_\+send\+\_\+password\+\_\+status@{S\+Y\+S\+\_\+send\+\_\+password\+\_\+status}!C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h@{C\+N\+T\+R\+L\+\_\+\+S\+Y\+S.\+h}}
+\subsubsection[{S\+Y\+S\+\_\+send\+\_\+password\+\_\+status}]{\setlength{\rightskip}{0pt plus 5cm}uint8 S\+Y\+S\+\_\+send\+\_\+password\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_c_n_t_r_l___s_y_s_8h_a3d54700cc8c41568be1d493432b2f21e}
+Description\+: Function is used to send the status of the password in E\+E\+P\+R\+O\+M 

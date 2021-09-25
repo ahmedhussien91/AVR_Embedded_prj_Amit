@@ -1,0 +1,57 @@
+\hypertarget{_timer_8c}{\section{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+C\+N\+T\+R\+L/\+Door\+\_\+locker\+\_\+\+C\+N\+T\+R\+L\+\_\+\+E\+C\+U/\+Timer.c File Reference}
+\label{_timer_8c}\index{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+C\+N\+T\+R\+L/\+Door\+\_\+locker\+\_\+\+C\+N\+T\+R\+L\+\_\+\+E\+C\+U/\+Timer.\+c@{C\+:/\+Users/a7med/\+Desktop/\+Embbeded Project/\+Project code/\+Door\+\_\+locker\+\_\+project/\+Door\+\_\+locker\+\_\+project\+\_\+\+C\+N\+T\+R\+L/\+Door\+\_\+locker\+\_\+\+C\+N\+T\+R\+L\+\_\+\+E\+C\+U/\+Timer.\+c}}
+}
+
+
+Timer Module for Timers initializations to work in P\+W\+M mode \&.  
+
+
+{\ttfamily \#include \char`\"{}Timer.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_timer_8c_aa5404a24a8f321bed4f8297b0f2be19e}{Timer0\+\_\+\+P\+W\+M\+\_\+init} (uint8 duty\+\_\+cycle)
+\item 
+void \hyperlink{_timer_8c_ac8b662b9efd5ad89723e5a8d75e70a9a}{Timer0\+\_\+\+P\+W\+M\+\_\+\+Set\+\_\+duty} (uint8 duty\+\_\+cycle)
+\item 
+void \hyperlink{_timer_8c_a7e6b5bd604dd7f87183e7a3770db08a1}{Timer2\+\_\+\+P\+W\+M\+\_\+init} (uint8 duty\+\_\+cycle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Timer Module for Timers initializations to work in P\+W\+M mode \&. 
+
+\begin{DoxyDate}{Date}
+11/8/2014 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+a7med 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\hypertarget{_timer_8c_aa5404a24a8f321bed4f8297b0f2be19e}{\index{Timer.\+c@{Timer.\+c}!Timer0\+\_\+\+P\+W\+M\+\_\+init@{Timer0\+\_\+\+P\+W\+M\+\_\+init}}
+\index{Timer0\+\_\+\+P\+W\+M\+\_\+init@{Timer0\+\_\+\+P\+W\+M\+\_\+init}!Timer.\+c@{Timer.\+c}}
+\subsubsection[{Timer0\+\_\+\+P\+W\+M\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}void Timer0\+\_\+\+P\+W\+M\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{uint8}]{duty\+\_\+cycle}
+\end{DoxyParamCaption}
+)}}\label{_timer_8c_aa5404a24a8f321bed4f8297b0f2be19e}
+Description\+: Function used to initialize timer 1 to work in P\+W\+M mode function take Duty Cycle to output a signal on P\+I\+N with pulse width equal to duty cycle ( Values entered is from 0 to 255 ) \hypertarget{_timer_8c_ac8b662b9efd5ad89723e5a8d75e70a9a}{\index{Timer.\+c@{Timer.\+c}!Timer0\+\_\+\+P\+W\+M\+\_\+\+Set\+\_\+duty@{Timer0\+\_\+\+P\+W\+M\+\_\+\+Set\+\_\+duty}}
+\index{Timer0\+\_\+\+P\+W\+M\+\_\+\+Set\+\_\+duty@{Timer0\+\_\+\+P\+W\+M\+\_\+\+Set\+\_\+duty}!Timer.\+c@{Timer.\+c}}
+\subsubsection[{Timer0\+\_\+\+P\+W\+M\+\_\+\+Set\+\_\+duty}]{\setlength{\rightskip}{0pt plus 5cm}void Timer0\+\_\+\+P\+W\+M\+\_\+\+Set\+\_\+duty (
+\begin{DoxyParamCaption}
+\item[{uint8}]{duty\+\_\+cycle}
+\end{DoxyParamCaption}
+)}}\label{_timer_8c_ac8b662b9efd5ad89723e5a8d75e70a9a}
+Description\+: Function used to initialize timer 1 to work in P\+W\+M mode function take Duty Cycle to output a signal on P\+I\+N with pulse width equal to duty cycle ( Values entered is from 0 to 255 ) \hypertarget{_timer_8c_a7e6b5bd604dd7f87183e7a3770db08a1}{\index{Timer.\+c@{Timer.\+c}!Timer2\+\_\+\+P\+W\+M\+\_\+init@{Timer2\+\_\+\+P\+W\+M\+\_\+init}}
+\index{Timer2\+\_\+\+P\+W\+M\+\_\+init@{Timer2\+\_\+\+P\+W\+M\+\_\+init}!Timer.\+c@{Timer.\+c}}
+\subsubsection[{Timer2\+\_\+\+P\+W\+M\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}void Timer2\+\_\+\+P\+W\+M\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{uint8}]{duty\+\_\+cycle}
+\end{DoxyParamCaption}
+)}}\label{_timer_8c_a7e6b5bd604dd7f87183e7a3770db08a1}
+Description\+: Function used to initialize timer 2 to work in P\+W\+M mode function take Duty Cycle to output a signal on P\+I\+N with pulse width equal to duty cycle 
